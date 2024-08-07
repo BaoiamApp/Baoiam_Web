@@ -2,6 +2,8 @@
 <!-- Carousel section -->
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
 <script>
   // Display Django messages using SweetAlert2
   {% if messages %}
@@ -18,105 +20,111 @@
   {% endif %}
 </script>
 
-<div
-  class="home-section carousel slide mb-5"
-  id="carouselExampleSlidesOnly"
-  data-ride="carousel"
-  data-interval="4500"
->
-  <section class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="text-left d-block w-100">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <h2 class="carousel-heading decrease-font-size-bigger-xl">
+<script>
+  const swiperEl = document.querySelector('swiper-container')
+  Object.assign(swiperEl, {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    pagination: {
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+      },
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    },
+  });
+  swiperEl.initialize();
+  </script>
+
+
+{% comment %} .................................................... {% endcomment %}
+
+<swiper-container class="mySwiper swiper-container home-slider" pagination="true" pagination-clickable="true" space-between="30"
+    centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
+    <swiper-slide class="swiper-slide"> 
+      
+          
+          <div class="home-slider-content">
+
+            <h2 class="decrease-font-size-bigger">
               Unlock the full potential, Upgrade your
               <span class="underline">Skills.</span>
             </h2>
-            <div class="responsive" id="home_section1_img">
-              <img src="{% static 'home/img/4.jpg' %}" alt="" />
+              <p>
+                Decipher your potential as a product leader with our cutting-edge,
+                top-notch skilled trainers
+              </p>
             </div>
-            <p class="para-width-medium">
-              Decipher your potential as a product leader with our cutting-edge,
-              top-notch skilled trainers
-            </p>
-            <div class="home-btn">
-              <!-- <button class="btn-1">Get Started</button> -->
-              {% comment %} {% endcomment %}
-              <!-- <a><button class="btn-2" id="btn-2">Explore Our Courses</button></a> -->
-            </div>
-          </div>
+            
+              
+              <div class="home-slider-img ">
+                <img src="{% static 'home/img/7.jpg' %}" alt="" />
+              </div>
+              
+              
+          </swiper-slide>
+   
+    <swiper-slide class="swiper-slide"> 
+      
+          
+          <div class="home-slider-content">
 
-          <div class="col-md-6 col-sm-12 laptop align-center" id="home_section1_img">
-            <img
-              class="user-image-smaller"
-              src="{% static 'home/img/7.jpg' %}"
-              alt=""
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class="text-left d-block w-100">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <h2 class="decrease-font-size-small">
-              Redefining the classroom experience and Empowering
+            <h2 class="decrease-font-size-bigger">
+                Redefining the classroom experience and Empowering
               <span class="underline">Learners.</span>
             </h2>
-            <div class="responsive" id="home_section1_img">
-              <img src="{% static 'home/img/18.jpg' %}" alt="" />
-            </div>
-            <p>
-              Empower your destiny with SAP mastery, and drive excellent
+              <p>
+                Empower your destiny with SAP mastery, and drive excellent
               outcomes.
-            </p>
-            <div class="home-btn">
-              <!-- <button class="btn-1">Get Started</button> -->
-              <!-- <button class="btn-2">Explore Our Courses</button> -->
+              </p>
             </div>
-          </div>
+            
+              
+              <div class="home-slider-img ">
+                <img src="{% static 'home/img/44.jpg' %}" alt="" />
+              </div>
+              
+              
+          </swiper-slide>
+   
+    <swiper-slide class="swiper-slide"> 
+      
+          
+          <div class="home-slider-content">
 
-          <div class="col-md-6 col-sm-12 laptop align-center">
-            <img src="{% static 'home/img/44.jpg' %}" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="carousel-item">
-      <div class="text-left d-block w-100">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
             <h2 class="decrease-font-size-bigger">
               Boost your Skillset, Accelerate your
               <span class="underline">Career.</span>
             </h2>
-            <div class="responsive">
-              <img src="{% static 'home/img/22.jpg' %}" alt="" />
+              <p>
+                Get ahead of the pack, and scale up new heights with the chance to
+                interact with top CEOs and Founders.
+              </p>
             </div>
-            <p>
-              Get ahead of the pack, and scale up new heights with the chance to
-              interact with top CEOs and Founders.
-            </p>
-            <div class="home-btn">
-              <!-- <button class="btn-1">Get Started</button> -->
-              <!-- <button class="btn-2">Explore Our Courses</button> -->
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12 laptop align-center">
-            <img src="{% static 'home/img/42.jpg' %}" alt="" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
+            
+              
+              <div class="home-slider-img ">
+                <img src="{% static 'home/img/42.jpg' %}" alt="" />
+              </div>
+              
+              
+          </swiper-slide>
+   
+   
+  </swiper-container>
 <!-- Boxes(Descriptions) -->
 <div class="boxes">
-  <div class="row_first" style="border-radius: 70px">
+  <div class="row_first" style="border-radius: 10px">
     <div class="text-center">
       <div class="icons">
         <i class="fa-solid fa-graduation-cap"></i>
@@ -128,7 +136,7 @@
     </div>
   </div>
 
-  <div class="row_first" style="border-radius: 70px">
+  <div class="row_first" style="border-radius: 10px">
     <div class="text-center">
       <div class="icons">
         <i class="fa-regular fa-lightbulb"></i>
@@ -142,7 +150,7 @@
     </div>
   </div>
 
-  <div class="row_first" style="border-radius: 70px">
+  <div class="row_first" style="border-radius: 10px">
     <div class="text-center">
       <div class="icons">
         <i class="fa-solid fa-person"></i>
@@ -154,7 +162,7 @@
     </div>
   </div>
 
-  <div class="row_first" style="border-radius: 70px">
+  <div class="row_first" style="border-radius: 10px">
     <div class="text-center">
       <div class="icons">
         <i class="fa-solid fa-industry"></i>
@@ -167,16 +175,17 @@
   </div>
 </div>
 
+
 <!-- Enhance skill section -->
 <section class="section-3 mb-5" id="baoiam-info">
   <div>
     <div class="d-block w-100">
       <div class="row mr-lr-0">
-        <div class="col-md-6 col-sm-12 align-center">
+        <div class="col-md-5 col-sm-12">
           <img class="user-image" src="{% static 'home/img/39.jpg' %}" alt="" />
         </div>
 
-        <div class="col-md-6 col-sm-12 text-left">
+        <div class="col-md-7 col-sm-12">
           <div class="horizon">
             <h2 class="decrease-font-size-small">
               Expand Your <span class="underline">Horizons,</span> Enhance Your
