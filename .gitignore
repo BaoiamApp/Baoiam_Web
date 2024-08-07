@@ -1,0 +1,11 @@
+contactapp/__pycache__
+baoiam/__pycache__
+core/__pycache__
+dashboard/__pycache__
+userauths/__pycache__
+course/__pycache__
+*.pyc
+.gitignore
+.gitignore
+bootcamp/__pycache__
+myenv
