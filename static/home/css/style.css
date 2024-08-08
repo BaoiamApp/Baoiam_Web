@@ -70,7 +70,7 @@ h2,
 h4,
 h5,
 h6 {
-  color: rgb(41, 41, 48);
+  color: rgb(1, 1, 68);
 }
 
 img {
@@ -225,6 +225,7 @@ header img {
   /* height: 50%; */
 }
 
+
 .about-slide {
   padding: 0;
   margin: 0 0 0;
@@ -264,7 +265,6 @@ header img {
   width: 100%;
   height: 2px;
   background: rgb(245, 69, 0);
-
 }
 
 .special {
@@ -282,7 +282,6 @@ header img {
 }
 
 @media (max-width: 576px) {
-
   header .navbar-brand {
     padding-left: 0rem;
   }
@@ -323,21 +322,18 @@ header img {
   align-items: center;
 }
 
-.home-slider-content h2 {
-  margin-top: 35px;
+
+.home-section .row h2 {
+  margin-bottom: 2rem;
   font-size: 40px;
   font-weight: bold;
   /* color: blue; */
-  padding-left: 10px;
-  padding-bottom: 1rem;
+  /* padding-left: 10px; */
 }
 
-.home-slider-content p:not(.about-slide) {
-  font-size: 1.2rem;
+.home-section .row p:not(.about-slide) {
+  font-size: 1.1rem;
   font-weight: 500;
-  padding: 1rem 0rem;
-  /* color: black; */
-  margin-right: 4rem;
   text-align: justify;
 }
 
@@ -346,23 +342,6 @@ header img {
 }
 
 @media (max-width: 768px) {
-  .home-slider-content h2 {
-    margin-top: 35px;
-    font-size: 20px;
-    font-weight: bold;
-    /* color: blue; */
-    padding-left: 10px;
-  }
-  
-  .home-slider-content p:not(.about-slide) {
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 1rem 0rem;
-    /* color: black; */
-    margin-right: 4rem;
-    text-align: justify;
-  }
-  
   .imginfo {
     position: inherit;
     left: 0;
@@ -371,6 +350,15 @@ header img {
   header .navbar-brand {
     padding-left: 1rem;
   }
+
+  .home-section .row p:not(.about-slide){
+    font-size: 0.8rem;
+  }
+  
+.home-section .row h2 {
+  font-size: 1.5rem;
+}
+
 }
 
 @media (max-width: 600px) {
@@ -391,24 +379,33 @@ header img {
     display: none !important;
   }
 
- 
+  /* .home-section .row p:not(.about-slide) {
+    margin-right: 0;
+    text-align: justify;
+  } */
 }
 
-@media (max-width: 390px) {
-  .hone-slider-contnet h2 {
-    font-size: 20px;
+/* @media (max-width: 474px) {
+  .home-section .row h2 {
+    font-size: 2.8rem;
+  }
+
+  .home-section .row p:not(.about-slide) {
+    font-size: 15px;
+  }
+
+  .btn-1,
+  .btn-2 {
+    font-size: 18px;
+  }
+} */
+
+@media (min-width: 321px) and (max-width: 390px) {
+  .home-section .row h2 {
+    font-size: 28px;
     margin-top: 7rem;
   }
 
-  .home-slider-content p:not(.about-slide) {
-    font-size: 0.7rem;
-    font-weight: 500;
-    padding: 1rem 0rem;
-    /* color: black; */
-    margin-right: 4rem;
-    text-align: justify;
-  }
-  
   .heading2_underline::before {
     content: "";
     position: absolute;
@@ -423,24 +420,16 @@ header img {
     height: 76% !important;
   } */
 
-   /* .icons i{ */
-    /* width: 45% !important; */
-    /* height: 146%; */
-    /* font-size: 31px !important; */
-    /* text-align: center; */
-    /* padding-left: 21px !important; */
-  /* } */
-
   .div_text h2 {
     font-size: 17px !important;
     padding-top: 17px !important;
   }
 
-  .row_first p{
+  .row_first p {
     font-size: 11px !important;
   }
 
-  .section-3 .horizon h2{
+  .section-3 .horizon h2 {
     left: -4% !important;
     text-align: center;
     font-size: 28px !important;
@@ -448,52 +437,48 @@ header img {
     padding-bottom: 1rem;
   }
 
-  .section-3 .horizon .horizon-sub-heading{
+  .section-3 .horizon .horizon-sub-heading {
     left: -1% !important;
     text-align: center;
   }
 
-  .section-3 .horizon .check{
+  .section-3 .horizon .check {
     text-align: start;
     left: 19%;
   }
-
-  .mentors-outer-div{
+  .mentors-outer-div {
     margin-right: 38px;
   }
 
-  .section-3 .horizon h2.h22{
-    left:-18% !important;
+  .section-3 .horizon h2.h22 {
+    left: -18% !important;
   }
 
-  #virtues-carousel{
+  #virtues-carousel {
     width: 100%;
     margin-left: -31px;
   }
-
-  section.work h1{
+  section.work h1 {
     font-size: 28px !important;
   }
 
-  ul{
+  ul {
     padding-right: 28px !important;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 28px !important;
     padding-top: 8rem;
   }
 
-  .infoimg h5{
+  .infoimg h5 {
     margin-left: -17% !important;
     text-align: center;
   }
-  .infoimg p{
+  .infoimg p {
     margin-left: -17% !important;
     text-align: center;
   }
-
-  
 }
 
 /* Boxes(Descriptions) */
@@ -503,7 +488,7 @@ header img {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding-inline: 90px;
+  padding-inline: 30px;
   justify-content: space-around;
   height: fit-content;
   align-items: center;
@@ -512,25 +497,22 @@ header img {
 .icons i {
   border-radius: 50%;
   padding: 20px 27px;
-  font-size: 30px;
+  font-size: 48px;
   /* width: 80px; */
   height: auto;
   color: rgb(255, 255, 255);
-  background-color: orange;
+  background-color: #fb5021;
 }
 
 .row_first {
   padding: 30px 40px;
-  border: 1px solid orange;
-  transition: box-shadow 0.3s ease; ;
-  color: black;
-  width: 250px;
+  border: 1px solid rgba(100, 100, 100, 0.362);
+  color: #03003f;
+  width: 285px;
   height: 300px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 0 20px pink;
   flex-wrap: wrap;
-
-
 }
 
 .div_text {
@@ -544,7 +526,7 @@ header img {
 
 .div_text h2 {
   padding: 10px;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;
@@ -583,7 +565,8 @@ header img {
 }
 
 .virtues-heading {
-  font-size: 23px;
+  color: #000000;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -597,13 +580,14 @@ header img {
   text-align: center;
   font-weight: 700;
   position: relative;
+  color: #000000;
   top: 25px;
-  font-size: 50px;
+  font-size: 2.7rem;
 }
 
 .courses p.sub-heading {
   width: 70%;
-  margin: 3rem auto 3rem;
+  margin: 3rem auto 2rem;
   text-align: center;
   font-weight: 500;
   color: #757575;
@@ -617,7 +601,7 @@ header img {
 }
 
 .blog-card {
-  width: 30%;
+  width: 28%;
   padding-bottom: 2rem;
 }
 
@@ -633,7 +617,7 @@ header img {
 
 .blog-card .card-body .card-subtitle {
   color: #5e5e5e;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .blog-card .card-body .card-title {
@@ -731,10 +715,19 @@ header img {
   .blog-card-deck {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    padding-inline: 2rem;
   }
 
   .blog-card {
     width: 100%;
+  }
+
+  .courses h1 {
+    font-size: 2rem;
+  }
+  .courses p.sub-heading {
+    font-size: 1rem;
+    margin: 2rem auto;
   }
 }
 
@@ -771,12 +764,12 @@ header img {
   margin-bottom: 5rem !important;
 }
 
-.section-3 .horizon h2 {
-  font-size: 40px;
+.section-3 .horizon > h2 {
+  font-size: 33px;
   font-weight: 700;
-  line-height: 1.3;
-  /* color: #1e1a52; */
-  /* margin-top: 5rem; */
+  /* line-height: 1.3; */
+  color: #000000;
+  margin-top: 3rem;
 }
 
 .decrease-font-size-small {
@@ -803,11 +796,6 @@ header img {
 }
 
 .section-3 .user-image {
-  border: 5px solid transparent;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
-
-  border-radius: 2rem;
-
   width: 32em;
   position: relative;
 }
@@ -817,7 +805,7 @@ header img {
 }
 
 .user-image-medium-small {
-  width: 28em;
+  width: 30em;
 }
 
 .user-image-small {
@@ -858,9 +846,9 @@ header img {
 border-right: 1.5px solid #949494;
 } */
 
-/* .section-3 .horizon {
+.section-3 .horizon {
   border-bottom: 1.5px solid #949494;
-} */
+}
 
 .section-3 .horizon .mentors h4 {
   font-size: 1.5rem;
@@ -903,17 +891,11 @@ border-right: 1.5px solid #949494;
   margin-bottom: 1rem;
 }
 
-@media (max-width:1350px) {
-  .section-3 .user-image {
-    width: 25rem;
-  }
-  
-}
-@media (min-width: 320px) and (max-width: 321px){
+@media (min-width: 320px) and (max-width: 321px) {
   /* .section-3 .horizon h2.h22{
     left: -25% !important;
   } */
-/* .section-3 .horizon h2 {
+  /* .section-3 .horizon h2 {
     margin-left:20px;
 
     font-size: 25px !important;
@@ -986,90 +968,104 @@ border-right: 1.5px solid #949494;
 }
 
 /* How we work section */
-section.work {
-  padding: 3rem 8rem 6rem;
+section.we-work {
+  padding: 0rem 6rem 6rem;
   text-align: center;
 }
 
-section.work h1 {
+section.we-work h2 {
   font-weight: 700;
+  color: #000000;
+  font-size: 2.7rem;
 }
 
-section.work p.sub-heading {
-  margin: 4rem auto;
+section.we-work p.sub-heading {
+  margin: 1.5rem auto 2.5rem;
   width: 70%;
   color: #5e5e5e;
 }
 
-section.work .contents {
+section.we-work .content-steps {
   margin-top: 3rem;
-  display: flex;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  grid-gap: 7.3rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  grid-gap: 2.5rem;
   overflow: hidden;
 }
 
-section.work .contents .steps {
-  position: relative;
+section.we-work .content-steps .steps > h5 {
+  font-size: 1rem;
+  color: #424242;
 }
 
-section.work .contents .steps:not(.last)::after {
-  content: url("../img/arrow.png");
-  position: absolute;
-  display: inline-block;
-  top: -40px;
-  right: -120px;
+section.we-work .content-steps .steps > p {
+  font-size: 0.8rem;
 }
 
-section.work .contents .steps img {
-  width: 80%;
+section.we-work .content-steps .steps img {
+  width: 60%;
   margin-bottom: 1rem;
 }
 
-section.work .contents h5 {
+section.we-work .content-steps h5 {
   font-weight: 700;
 }
 
-section.work .contents p {
+section.we-work .content-steps p {
   color: #5e5e5e;
 }
 
-@media (max-width: 576px) {
-  section.work h1 {
-    font-size: 25px;
+@media (max-width: 768px) {
+  section.we-work {
+    padding: 0 2rem 6rem;
   }
-
-  section.work p.sub-heading {
-    font-size: 15px;
-    width: 90vw;
-    text-align: center;
+  section.we-work .content-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
   }
-
-  section.work {
-    padding: 3rem 20px 6rem;
+  section.we-work p.sub-heading {
+    font-size: 0.8rem;
+    margin: 1rem auto 0;
+    width: 70%;
   }
-
-  section.work .contents .steps img {
-    max-width: 8em;
+  section.we-work h2 {
+    font-size: 2.2rem;
   }
-
-  /* section.work .contents{
-  grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
-  grid-gap: 1.3rem;
-} */
-  section.work .contents h5 {
-    font-size: 18px;
+  section.we-work .content-steps .steps img {
+    width: 50%;
   }
-
-  section.work .contents p {
-    font-size: 14px;
-    text-align: center;
+  section.we-work .content-steps .steps > h5 {
+    font-size: 0.9rem;
+  }
+  section.we-work .content-steps .steps > p {
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 1298px) {
-  section.work .contents .step-4::after {
-    display: none;
+@media (max-width: 425px) {
+  section.we-work {
+    padding: 0 2rem 6rem;
+  }
+  section.we-work .content-steps {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(120px, 1fr));
+  }
+  section.we-work p.sub-heading {
+    font-size: 0.7rem;
+    margin: 1rem auto;
+    width: 100%;
+  }
+  section.we-work h2 {
+    font-size: 1.8rem;
+  }
+  section.we-work .content-steps .steps img {
+    width: 30%;
+  }
+  section.we-work .content-steps .steps > h5 {
+    font-size: 0.9rem;
+  }
+  section.we-work .content-steps .steps > p {
+    font-size: 0.8rem;
   }
 }
 
@@ -1122,26 +1118,6 @@ section.work .contents p {
 
   #virtues-row.row .row.mx-1 {
     justify-content: flex-start;
-  }
-}
-
-@media (max-width: 1000px) {
-  section.work .contents .step-3::after {
-    display: none;
-  }
-
-  section.work .contents .step-4::after {
-    display: inline-block;
-  }
-}
-
-@media (max-width: 720px) {
-  section.work .contents .steps:not(.last)::after {
-    display: none;
-  }
-
-  section.work .contents .step-4::after {
-    display: none;
   }
 }
 
@@ -1364,7 +1340,7 @@ padding-left: 7.5em; */
 /* Virtues and Protocols */
 
 p.virtues-sub-heading {
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #5e5e5e;
   font-weight: 500;
 }
@@ -1383,6 +1359,116 @@ p.virtues-sub-heading {
 
 #virtues-tab-3 .fa {
   color: white;
+}
+
+.swiper-container2 {
+  width: 100%;
+  height: fit-content;
+  padding-inline-end: 4rem;
+}
+
+.swiper-slide2 {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.virtues-third-text,
+.virtues-second-text,
+.virtues-first-text {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+.virtues-third-text,
+.virtues-second-text,
+.virtues-first-text img {
+  width: 100%;
+}
+.virtues-text {
+  text-align: left;
+}
+
+.virtues_heading {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.virtues_sub-heading {
+  font-size: 0.8rem;
+  color: #5e5e5e;
+}
+.proto {
+  display: flex;
+  width: 100%;
+}
+
+.proto-swiper {
+  width: 60%;
+}
+
+.proto-img {
+  width: 40%;
+}
+.proto-img > img {
+  width: 90%;
+}
+
+.section-v-3 .horizon > h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+}
+.section-v-3 .horizon {
+  padding-inline-start: 4.3rem;
+}
+
+.section-v-3 {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .proto-swiper {
+    width: 100%;
+  }
+  .proto-swiper .horizon > h2 {
+    font-size: 1.8rem;
+  }
+
+  .proto-img {
+    display: none;
+  }
+
+  .proto {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 425px) {
+  .section-v-3 .horizon {
+    padding-inline: 2rem;
+  }
+  .proto-swiper .horizon > h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  .virtues-third-text,
+  .virtues-second-text,
+  .virtues-first-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .swiper-container2 {
+    padding-inline-end: 0rem;
+  }
+  .virtues-text {
+    text-align: center;
+  }
 }
 
 /* Home Blog Section */
@@ -1870,7 +1956,7 @@ section.contact-us .right p {
 
 #downloads p {
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 700;
   margin-bottom: 4px;
   color: rgb(1, 1, 68);
@@ -1913,11 +1999,11 @@ ul {
   margin-inline-end: 0px;
   padding-inline-start: 40px;
   padding-left: 322px;
-  }
+}
 
 #downloads .nav-item {
   text-transform: uppercase;
-  font-size: 1rem;
+  /* font-size: 1rem; */
   margin-right: 3rem;
 }
 
@@ -1988,30 +2074,55 @@ content:none;
 content:none;
 } */
 
-.section-4 .tab-content-item .tabs-content-heading {
+.tab-content-item .tabs-content-heading {
   color: #03003f;
   font-weight: 700;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
-.section-4 .tab-content-item .tabs-content-subheading {
+.tab-content-item .tabs-content-subheading {
   font-size: 1.1rem;
   line-height: 1.8;
   font-weight: 500;
   color: #5e5e5e;
+  margin-block: 1rem;
 }
 
-.section-4 .tab-content-item .row .list p {
+.tab-content-item .row .list p {
   color: #03003f;
   font-size: 1.1rem;
   font-weight: 600;
 }
 
-.section-4 .tab-content-item .two {
+.list > ul {
+  padding: 0;
+  margin: 0;
+  /* display: flex; */
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+}
+
+.list ul .list-head {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.list ul p:nth-last-child(1) {
+  font-size: 0.8rem;
+  /* font-weight: 600; */
+}
+
+.list {
+  width: 60%;
+}
+
+.tab-content-item .two {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  gap: 5rem;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .section-4 .tab-content-item .two .col-md-7 .col-sm-12 {
@@ -2020,10 +2131,52 @@ content:none;
   align-items: center;
 }
 
-list 
-
-.section-4 h2 {
+.list .section-4 h2 {
   margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .tab-content-item .two {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .two-img {
+    width: 50%;
+  }
+
+  .tab-content-item .tabs-content-heading {
+    font-size: 1.5rem;
+  }
+
+  .tab-content-item .tabs-content-subheading {
+    font-size: 0.8rem;
+  }
+
+  .tab-content-item .row .list p {
+    color: #03003f;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .list > ul {
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+  }
+
+  .list ul .list-head {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .list ul p:nth-last-child(1) {
+    font-size: 0.7rem;
+    /* font-weight: 600; */
+  }
 }
 
 @media (max-width: 576px) {
@@ -2061,7 +2214,6 @@ list
   .section-4 .tab-content-item .tabs-content-subheading,
   .section-4 .tab-content-item .row .list p {
     font-size: 14px;
-
   }
 }
 
@@ -2383,12 +2535,11 @@ list
 
   .card-body .card-title {
     font-size: 1rem;
-    margin-bottom: 0;
-    padding-bottom: 0;
+    padding: 0.5rem 0rem 0;
   }
 
   .card-body .card-text {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .card-body a {
@@ -2426,6 +2577,7 @@ list
 @media (max-width: 480px) {
   .blog-card-deck {
     grid-template-columns: 1fr;
+    padding-inline: 3rem;
   }
 
   .we__offer_card a {
@@ -2602,29 +2754,28 @@ list
     bottom: 10px;
     width: 92%;
     left: 4%;
-   } 
+  }
 }
 
-
-@media (min-width:0px) and (max-width:320px){
-  .home-section .row h2{
+@media (min-width: 0px) and (max-width: 320px) {
+  .home-section .row h2 {
     font-size: 25px;
     margin-top: 3rem;
   }
 
-  .home-section .row p:not(.about-slide){
+  .home-section .row p:not(.about-slide) {
     font-size: 15px !important;
     text-align: center !important;
     margin-left: -2px;
     margin-right: -5px;
   }
 
-  .btn-1, .btn-2 {
+  .btn-1,
+  .btn-2 {
     font-size: 17px;
   }
 
-
-  .section-3 .horizon .horizon-sub-heading{
+  .section-3 .horizon .horizon-sub-heading {
     font-size: 13px;
     margin-left: -29px;
     margin-top: 24px;
@@ -2635,7 +2786,7 @@ list
     margin-right: 12px !important;
   }
 
-  .section-3 .horizon h2{
+  .section-3 .horizon h2 {
     margin-left: -35px !important;
     margin-right: 12px !important;
     font-size: 25px;
@@ -2652,17 +2803,17 @@ list
     margin-left: -35px;
   }
 
-  .section-3 .horizon{
+  .section-3 .horizon {
     border-bottom: none;
   }
 
-  .horizon .queries{
+  .horizon .queries {
     margin-left: -32px;
     border-bottom: 1px solid #949494;
     padding-bottom: 12px;
   }
 
-  .courses h1{
+  .courses h1 {
     font-size: 25px;
   }
 
@@ -2673,11 +2824,11 @@ list
     margin-bottom: 2rem;
   }
 
-  .section-4 .tab-content-item .tabs-content-heading{
+  .section-4 .tab-content-item .tabs-content-heading {
     font-size: 25px !important;
   }
 
-  .home-section .row img{
+  .home-section .row img {
     padding-top: -20px;
   }
 
@@ -2690,16 +2841,16 @@ list
     margin-left: -44px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 25px;
     padding-top: 20px;
   }
 
-  .box_1 form{
+  .box_1 form {
     margin-left: -41px !important;
   }
-  
-  .box_1 h2{
+
+  .box_1 h2 {
     margin-left: 44px;
   }
 
@@ -2707,7 +2858,7 @@ list
     margin-left: 15px !important;
   }
 
-  .boxes .row_first{
+  .boxes .row_first {
     margin-left: -14px;
     width: 97%;
     height: 80%;
@@ -2724,11 +2875,11 @@ list
     flex-direction: column;
   }
 
-  .row_first p{
+  .row_first p {
     font-size: 11px;
   }
 
-  #virtues-carousel{
+  #virtues-carousel {
     width: 77%;
     margin-left: -42px;
   }
@@ -2738,69 +2889,67 @@ list
     margin-left: -23%;
   }
 
-  .infoimg h5{
+  .infoimg h5 {
     font-size: 18px;
     padding-left: 20px;
   }
 
-  .infoimg p{
+  .infoimg p {
     font-size: 15px;
     padding-right: 43px;
     margin-left: 62px;
   }
 }
 
-@media (min-width: 321px) and (max-width: 430px){
-  .section-3 .horizon h2{
+@media (min-width: 321px) and (max-width: 430px) {
+  .section-3 .horizon h2 {
     font-size: 26px !important;
-    margin-left: -3px !important; 
+    margin-left: -3px !important;
     margin-right: 5px;
     text-align: left;
     margin-top: 28px;
-
   }
 
-  .section-3 .horizon .horizon-sub-heading{
+  .section-3 .horizon .horizon-sub-heading {
     left: 0%;
     font-size: 15px;
     text-align: center;
   }
 
-  .section-3 .horizon .check{
+  .section-3 .horizon .check {
     padding-left: 54px;
     padding-top: 18px;
     padding-bottom: 18px;
     border-bottom: none;
   }
 
-  .section-3 .horizon .mentors h4{
+  .section-3 .horizon .mentors h4 {
     border-top: 1.5px solid #949494;
     margin-left: -43px;
     margin-right: -86px;
     padding-top: 11px;
   }
 
-  .section-3 .horizon h2.h22{
+  .section-3 .horizon h2.h22 {
     font-size: 26px !important;
-    margin-left: -60px !important; 
+    margin-left: -60px !important;
     /* text-align: center; */
     margin-top: -39px;
     margin-right: 35px;
   }
 
-
-  .horizon .queries{
+  .horizon .queries {
     text-align: center;
     border-bottom: 1.5px solid #949494;
     padding-bottom: 11px;
     margin-left: 19px;
   }
 
-  .section-3 .horizon{
+  .section-3 .horizon {
     border-bottom: none;
   }
 
-  #virtues-tab-1-content.virtues-tab-content-item .row{
+  #virtues-tab-1-content.virtues-tab-content-item .row {
     position: relative;
     right: 3%;
   }
@@ -2818,16 +2967,16 @@ list
     padding-right: 50px;
   }
 
-  #expand_list{
+  #expand_list {
     /* padding-right:39px !important; */
     margin-left: -265px;
   }
 
-  #virtue_protocols{
+  #virtue_protocols {
     margin-left: -9px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     padding-top: 3rem;
     font-size: 28px;
   }
@@ -2842,94 +2991,92 @@ list
     font-size: 19px;
   }
 
-
-  .home-section .row .col-md-6:not(.infoimg){
+  .home-section .row .col-md-6:not(.infoimg) {
     margin-left: 13px;
     /* margin-left: 3%; */
     margin-right: 60px;
   }
-/* 
+  /* 
   .home-section .row .col-sm-12.h2-dec p{
     margin-left: -8px;
     margin-right: 20px;
 
   } */
 
-  .courses h1{
+  .courses h1 {
     font-size: 26px;
     margin-top: -100px;
   }
 
-  .courses p.sub-heading{
+  .courses p.sub-heading {
+    margin-top: 2.5rem;
     width: 98%;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   /* .section-3 .horizon h2.h22{
     font-size: 28px !important;
   } */
 
-  section.work h1{
+  section.work h1 {
     font-size: 28px;
     margin-top: -60px;
   }
 
-  section.work p.sub-heading{
+  section.work p.sub-heading {
     margin-top: 30px;
-
   }
 
   /* section.work .contents p{
     margin-bottom: -80px;
   } */
 
-  section.work .contents{
+  section.work .contents {
     grid-gap: 1rem 11rem;
   }
 
-  .boxes{
+  .boxes {
     margin-top: -4rem;
   }
 
-  section.expert h1{
+  section.expert h1 {
     font-size: 28px;
     text-align: center;
   }
-  .quote{
+  .quote {
     margin: 0px;
     font-size: 15px !important;
   }
- .row-heading p{
-  margin: 0px;
-  padding: 0px;
-  text-align:left;
-}
-  #expand_list{
+  .row-heading p {
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+  }
+  #expand_list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 0px;
-    margin:20px 0px;
+    margin: 20px 0px;
     margin-left: 47px;
   }
 
   .list li {
-  width: 150px;
-  text-align: left;
-
-}
+    width: 150px;
+    text-align: left;
+  }
   .list p {
     margin: 0px;
     padding: 0px;
   }
 
-  #baoiam-info.section-3.mb-5 .user-image{
+  #baoiam-info.section-3.mb-5 .user-image {
     margin-top: -61px;
   }
 
-  .section-4 .tab-content-item .tabs-content-heading{
+  .section-4 .tab-content-item .tabs-content-heading {
     font-size: 26px;
     margin-bottom: -24px;
   }
@@ -2938,7 +3085,7 @@ list
     font-size: 12px;
   }
 
-  .home-section .row h2{
+  .home-section .row h2 {
     /* text-align: center; */
     padding-right: 10px;
     font-size: 26px;
@@ -2948,46 +3095,47 @@ list
     margin-bottom: 3rem;
   }
 
-  .home-section .row p:not(.about-slide){
+  .home-section .row p:not(.about-slide) {
     font-size: 18px;
     /* margin-right: 3rem; */
     text-align: center;
   }
 
-  .btn-1, .btn-2 {
+  .btn-1,
+  .btn-2 {
     margin-left: -36px;
-    font-size: 15px;
+    font-size: 12px;
   }
 
-  #baoiam_heading{
+  #baoiam_heading {
     margin-top: 0rem;
     margin-bottom: -1rem;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 28px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     padding-right: 28px;
     font-size: 19px;
     padding-top: 80px;
   }
 
-  #baoiam_ions{
+  #baoiam_ions {
     position: relative;
     right: 16%;
   }
 
-  #we_are{
+  #we_are {
     font-size: 20px !important;
   }
 
-  .heading2_underline::before{
+  .heading2_underline::before {
     display: none;
   }
 
-  .home-section .row .col-sm-12.h2-dec p{
+  .home-section .row .col-sm-12.h2-dec p {
     margin-top: -2px;
     margin-bottom: 13px;
   }
@@ -2995,7 +3143,7 @@ list
   .infoimg {
     padding-top: 8%;
     margin-left: 2%;
-}
+  }
 
   /* .wrapper img{
     width:80%
@@ -3023,19 +3171,19 @@ list
     margin-bottom: -14px;
   }
 
-  .row_first{
+  .row_first {
     width: 82%;
     height: 90%;
     margin-left: -11px;
   }
 
-  .div_text h2{
+  .div_text h2 {
     font-size: 19px;
     text-align: center;
     justify-content: center;
   }
 
-  .row_first p{
+  .row_first p {
     font-size: 15px;
   }
 
@@ -3043,114 +3191,109 @@ list
     font-size: 30px;
   }
 
-
   /* #baoiam_ions{
     display: flex;
     align-items: center;
     right: 21%;
   } */
 
-  #ions_info{
+  #ions_info {
     display: flex !important;
     flex-direction: column !important;
     align-items: center;
-
   }
 
   .wrapper img {
     width: 100%;
   }
 
-  #company_img{
-    width: 70% ;
+  #company_img {
+    width: 70%;
   }
-
 }
 
-
-@media (min-width: 431px) and (max-width: 500px){
-  .home-section .row h2{
+@media (min-width: 431px) and (max-width: 500px) {
+  .home-section .row h2 {
     font-size: 30px;
     padding-top: 4rem;
   }
 
-
-  .home-section .row p:not(.about-slide){
+  .home-section .row p:not(.about-slide) {
     font-size: 18px;
     margin-right: 1rem;
-
   }
 
-  .btn-1, .btn-2{
+  .btn-1,
+  .btn-2 {
     font-size: 18px;
   }
 
-  .section-3 .horizon h2{
+  .section-3 .horizon h2 {
     font-size: 30px;
     text-align: justify;
     margin-right: 2rem;
   }
 
-  .section-3 .horizon .horizon-sub-heading{
+  .section-3 .horizon .horizon-sub-heading {
     font-size: 17px;
     /* margin-right: 2rem; */
   }
 
-  .section-3 .horizon .check{
+  .section-3 .horizon .check {
     text-align: center;
   }
 
-  .courses h1{
+  .courses h1 {
     font-size: 30px;
   }
 
-  .blog-card-deck{
+  .blog-card-deck {
     display: flex;
     flex-direction: column;
   }
 
-  .section-3 .horizon h2.h22{
+  .section-3 .horizon h2.h22 {
     font-size: 30px;
     text-align: center;
     margin-right: 0rem;
   }
 
-  .user-image-medium-small{
+  .user-image-medium-small {
     right: 0%;
   }
 
-  section.work h1{
+  section.work h1 {
     font-size: 30px;
   }
 
-  section.work .contents{
+  section.work .contents {
     display: flex;
     flex-direction: column;
   }
 
-  section.expert h1{
+  section.expert h1 {
     font-size: 30px;
     text-align: center;
   }
 
-  .section-4 .tab-content-item .tabs-content-heading{
+  .section-4 .tab-content-item .tabs-content-heading {
     font-size: 30px;
     padding-top: 1rem;
   }
 
-  ul{
+  ul {
     padding-left: 136px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 30px;
     padding-top: 3rem;
   }
 }
 
-@media (min-width: 501px) and (max-width: 600px){
-  .home-section .row h2{
-    font-size: 32px
+@media (min-width: 501px) and (max-width: 600px) {
+  .home-section .row h2 {
+    font-size: 32px;
   }
 
   /* .home-section .row img{
@@ -3158,90 +3301,88 @@ list
     margin-left: 3rem;
   } */
 
-  .section-3 .horizon h2{
+  .section-3 .horizon h2 {
     font-size: 30px;
     margin-top: 0rem;
   }
 
-  #baoiam-info.section-3.mb-5 .user-image{
+  #baoiam-info.section-3.mb-5 .user-image {
     margin-left: 2rem;
   }
 
-  .section-3 .horizon .check{
+  .section-3 .horizon .check {
     padding-left: 10rem;
   }
 
-  .courses h1{
+  .courses h1 {
     font-size: 32px;
   }
 
-  .blog-card-deck{
+  .blog-card-deck {
     display: flex;
     flex-direction: column;
     width: 70%;
     margin-left: 6rem;
   }
 
-  .section-3 .horizon h2.h22{
+  .section-3 .horizon h2.h22 {
     text-align: center;
     margin-left: 1rem;
     font-size: 32px;
   }
 
-  section.work h1{
+  section.work h1 {
     font-size: 32px;
   }
 
-  section.work p.sub-heading{
+  section.work p.sub-heading {
     margin-left: -4rem;
     width: 134%;
     margin-top: 1rem;
     /* margin: 0%; */
   }
 
-  section.work .contents .steps img{
+  section.work .contents .steps img {
     width: 40%;
     /* margin-top: -4rem; */
   }
 
-  section.expert h1{
+  section.expert h1 {
     font-size: 32px;
     text-align: center;
   }
 
-  .section-4 .tab-content-item .tabs-content-heading{
+  .section-4 .tab-content-item .tabs-content-heading {
     font-size: 32px;
   }
 
-  #downloads p{
+  #downloads p {
     font-size: 15px;
-  } 
+  }
 
-  ul{
+  ul {
     padding-left: 175px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 32px;
     margin-top: 4rem;
   }
 
-  #baoiam_ions{
-    width:100%;
+  #baoiam_ions {
+    width: 100%;
     margin-left: -7rem;
     margin-top: -1rem;
     margin-bottom: 1rem;
-
   }
 }
 
-
-@media (min-width:601px) and (max-width: 766px) {
-  .home-section .row h2{
+@media (min-width: 601px) and (max-width: 766px) {
+  .home-section .row h2 {
     font-size: 34px;
   }
 
-  .home-section .row img{
+  .home-section .row img {
     width: 73%;
     margin-top: -36px;
     margin-bottom: 28px;
@@ -3263,29 +3404,29 @@ list
     margin-left: 8rem;
   }
 
-  .user-image-medium-small{
+  .user-image-medium-small {
     width: 20em;
   }
 
-  section.work h1{
+  section.work h1 {
     font-size: 34px;
   }
 
-  section.work p.sub-heading{
+  section.work p.sub-heading {
     margin-left: -5rem;
     width: 131%;
     margin-top: 1rem;
   }
 
-  section.work .contents{
+  section.work .contents {
     display: flex;
     flex-direction: column;
   }
-  section.work .contents .steps img{
+  section.work .contents .steps img {
     width: 27%;
   }
 
-  section.work .contents .steps:not(.last)::after{
+  section.work .contents .steps:not(.last)::after {
     display: none;
   }
 
@@ -3294,11 +3435,11 @@ list
     text-align: center;
   }
 
-  .section-4 .tab-content-item .tabs-content-heading{
+  .section-4 .tab-content-item .tabs-content-heading {
     font-size: 34px;
   }
 
-  #downloads p{
+  #downloads p {
     font-size: 14px;
   }
 
@@ -3307,7 +3448,7 @@ list
     margin-left: 10rem;
   }
 
-  #expand_list{
+  #expand_list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -3322,25 +3463,24 @@ list
     padding: 0px;
   }
 
-  #baoiam_ions_head{
+  #baoiam_ions_head {
     width: 80%;
   }
 
-  .home-section .row p:not(.about-slide){
+  .home-section .row p:not(.about-slide) {
     font-size: 16px;
   }
 
-  section.startups h5{
+  section.startups h5 {
     font-size: 34px;
   }
 
-  img{
+  img {
     width: 65%;
   }
-
 }
 
-@media (min-width:300px) and (max-width:450px){
+@media (min-width: 300px) and (max-width: 450px) {
   .home-section .row .col-md-6:not(.infoimg) {
     padding: 0rem 1rem 1rem !important;
   }
@@ -3351,15 +3491,15 @@ list
   .home-section .row img {
     padding-top: 20px !important;
   }
-  #baoiam_heading{
-    margin-top: 1rem; 
+  #baoiam_heading {
+    margin-top: 1rem;
   }
   .home-section .row .col-sm-12.h2-dec p {
     margin-top: 0rem !important;
     line-height: 22px;
   }
-  #ions_info{
-    display:flex;
+  #ions_info {
+    display: flex;
     flex-direction: row;
   }
   #baoiam_ions {
@@ -3370,7 +3510,7 @@ list
   }
   .infoimg {
     padding-top: 8%;
-    margin-left: 0%; 
+    margin-left: 0%;
     position: relative;
     bottom: 7vh !important;
     text-align: center !important;
@@ -3378,8 +3518,8 @@ list
   section.startups h5 {
     padding-top: 0px;
   }
-  
-  .boxes{
+
+  .boxes {
     position: relative;
     bottom: 5vh !important;
   }
@@ -3389,34 +3529,33 @@ list
   .section-3 .horizon .check {
     padding-left: 20px !important;
     padding-top: 12px !important;
-  }  
-  #cont-us{
+  }
+  #cont-us {
     font-weight: 700;
   }
   .card-body .card-title {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding: 0.5rem 0rem;
   }
   .card-body .card-subtitle {
-    font-size: 0.9rem;
-  }  
-  .card-body .card-text {
     font-size: 0.8rem;
   }
   section.work {
     padding: 3rem 20px 3rem;
   }
-  .nav.nav-pills p {
+  /* .nav.nav-pills p {
     font-size: 14px !important;
-  }
-  
+  } */
 }
 
-@media (min-width:390px) and (max-width:450px){
-   #info-img,#info-img2,#info-img3{
+@media (min-width: 390px) and (max-width: 450px) {
+  #info-img,
+  #info-img2,
+  #info-img3 {
     position: relative !important;
     right: 6% !important;
-   }
-   #baoiam_ions {
+  }
+  #baoiam_ions {
     right: 2vh !important;
   }
 }
