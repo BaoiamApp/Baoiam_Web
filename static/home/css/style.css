@@ -18,9 +18,10 @@
 
 .orange-color {
   position: relative;
-  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  background: -webkit-linear-gradient(45deg, #fa2424, #ed7e1e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid orange;
 }
 
 .center-align {
@@ -184,6 +185,46 @@ header img {
 }
 
 /* Carousel section */
+.swiper-container {
+  margin-top: 7rem;
+  width: 90%;
+  height: 90%;
+  /* border: 1px solid ; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+  border-radius: 2.5rem;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+}
+
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-slider-content{
+  display: flex;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-slider-img{
+
+  width: 40%;
+  /* height: 50%; */
+}
+
 
 .about-slide {
   padding: 0;
@@ -281,6 +322,7 @@ header img {
   align-items: center;
 }
 
+
 .home-section .row h2 {
   margin-bottom: 2rem;
   font-size: 40px;
@@ -308,6 +350,7 @@ header img {
   header .navbar-brand {
     padding-left: 1rem;
   }
+
   .home-section .row p:not(.about-slide){
     font-size: 0.8rem;
   }
@@ -315,6 +358,7 @@ header img {
 .home-section .row h2 {
   font-size: 1.5rem;
 }
+
 }
 
 @media (max-width: 600px) {
@@ -376,14 +420,6 @@ header img {
     height: 76% !important;
   } */
 
-  /* .icons i{ */
-  /* width: 45% !important; */
-  /* height: 146%; */
-  /* font-size: 31px !important; */
-  /* text-align: center; */
-  /* padding-left: 21px !important; */
-  /* } */
-
   .div_text h2 {
     font-size: 17px !important;
     padding-top: 17px !important;
@@ -410,7 +446,6 @@ header img {
     text-align: start;
     left: 19%;
   }
-
   .mentors-outer-div {
     margin-right: 38px;
   }
@@ -423,7 +458,6 @@ header img {
     width: 100%;
     margin-left: -31px;
   }
-
   section.work h1 {
     font-size: 28px !important;
   }
