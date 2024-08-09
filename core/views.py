@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from social_django.models import UserSocialAuth
 from django.contrib.auth.models import User
 from core.forms import AccessForm
-from course.models import CourseCategory
+from course.models import CourseCategory, Course
 from django.contrib.auth import authenticate, login, logout
 from .models import GetInTouch
 from .forms import GetInTouchForm
@@ -13,6 +13,12 @@ from userauths.models import Dashboard_User
 
 def index(request):
     categories = CourseCategory.objects.all()
+    courses_by_category = {cat: Course.objects.filter(category=cat, status='active') for cat in categories}
+    print("courses by category ", courses_by_category)
+    for category, courses in courses_by_category.items():
+      for course in courses:
+        print(f"Course Title: {course.title}")
+        
     user = request.user
     if request.user.is_authenticated:
         auser = User.objects.get(username=user)  
@@ -21,9 +27,9 @@ def index(request):
             dashboard_user.save()
         dash_user = Dashboard_User.objects.get(user_id=auser.id)
         photo = dash_user.photo
-        return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'user':user, 'photo':photo})
+        return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'courses_by_category': courses_by_category, 'user':user, 'photo':photo})
     else:
-        return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'user':user})
+        return render(request, 'index.html',{'is_index_page': True, 'categories': categories, 'courses_by_category': courses_by_category, 'user':user})
 
 
 def career(request):
