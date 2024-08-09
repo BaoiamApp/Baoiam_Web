@@ -26,12 +26,19 @@ from django.contrib.auth.models import User
 
 # @login_required(login_url='/userauths/login/')
 def category_courses(request, category_id):
-    category = get_object_or_404(CourseCategory, id=category_id)
-    request.session['category_ID'] = category.id
-    courses = Course.objects.filter(category=category, status='active')
-    categories = CourseCategory.objects.all()
     course = Course.objects.get(id=category_id)
-    batches = Batch.objects.get(course=course)
+    
+    # 'up there product id is used as category_id to prevent course not fount error'
+
+    category = get_object_or_404(CourseCategory, course=course)
+    print(category,'category present')
+    request.session['category_ID'] = category.id
+    courses = Course.objects.filter(id=category_id, status='active')
+    categories = CourseCategory.objects.all()
+    
+    # batches = Batch.objects.get(course=course)
+    # 'currently batches has been commented out for DoesNotExist error since batches is associated with course and course using category id'
+
     testimonials = Testimonial.objects.all()
     carriculum = course.curriculum.all()
     subscription_course_plans = SubscriptionPlanCourse.objects.filter(course=course)
@@ -50,7 +57,7 @@ def category_courses(request, category_id):
             'carriculum':carriculum,
             'enrolled_courses': enrolled_courses,
             'categories': categories,
-            'batch':batches,
+            # 'batch':batches,
             'subscription_course_plans':subscription_course_plans,
             'testimonials': testimonials,
             'program_overview':program_overview,
@@ -63,7 +70,7 @@ def category_courses(request, category_id):
             'categories': categories,
             'carriculum':carriculum,
             'categories': categories,
-            'batch':batches,
+            # 'batch':batches,
             'subscription_course_plans':subscription_course_plans,
             'testimonials': testimonials,
             'program_overview':program_overview,})
