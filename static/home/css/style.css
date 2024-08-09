@@ -345,7 +345,10 @@ header img {
   .imginfo {
     position: inherit;
     left: 0;
+<<<<<<< HEAD
     right: 0;
+=======
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
   }
 
   header .navbar-brand {
@@ -2006,7 +2009,10 @@ ul {
   text-transform: uppercase;
   /* font-size: 1rem; */
   margin-right: 3rem;
+<<<<<<< HEAD
   /* margin-bottom: 3rem; */
+=======
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 }
 
 section div.wrapper {
@@ -2102,8 +2108,12 @@ content:none;
   /* display: flex; */
   display: grid;
   gap: 2rem;
+<<<<<<< HEAD
   /* grid-template-columns: repeat(3, minmax(120px, 1fr)); */
   grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+=======
+  grid-template-columns: repeat(3, minmax(120px, 1fr));
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 }
 
 .list ul .list-head {
@@ -2112,6 +2122,10 @@ content:none;
 }
 .list ul p:nth-last-child(1) {
   font-size: 0.8rem;
+<<<<<<< HEAD
+=======
+  /* font-weight: 600; */
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 }
 
 .list {
@@ -2126,10 +2140,14 @@ content:none;
   width: 100%;
   margin-top: 2rem;
 }
+<<<<<<< HEAD
 .two .two-img{
   width:fit-content;
   margin: inherit auto;
 }
+=======
+
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 .section-4 .tab-content-item .two .col-md-7 .col-sm-12 {
   display: flex;
   justify-content: center;
@@ -2165,6 +2183,7 @@ content:none;
     font-weight: 600;
   }
 
+<<<<<<< HEAD
   /* .list > ul {
     padding: 0;
     margin: 0; */
@@ -2173,6 +2192,16 @@ content:none;
     gap: 2rem;
     grid-template-columns: repeat(4, minmax(140px, 1fr));
   } */
+=======
+  .list > ul {
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(4, minmax(140px, 1fr));
+  }
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 
   .list ul .list-head {
     font-size: 0.8rem;
@@ -3548,9 +3577,15 @@ content:none;
   section.work {
     padding: 3rem 20px 3rem;
   }
+<<<<<<< HEAD
   .nav.nav-pills p {
     font-size: 24px !important;
   }
+=======
+  /* .nav.nav-pills p {
+    font-size: 14px !important;
+  } */
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
 }
 
 @media (min-width: 390px) and (max-width: 450px) {
@@ -3564,6 +3599,7 @@ content:none;
     right: 2vh !important;
   }
 }
+<<<<<<< HEAD
 
 #downloads{
   margin-bottom: 4rem;
@@ -3582,3 +3618,5 @@ content:none;
     margin: initial auto;
   }
 }
+=======
+>>>>>>> d9f4ecf30451fb02116014aced722ca6c2798ca8
