@@ -705,11 +705,11 @@
       a.button:active {
         filter: brightness(75%);
       }
-      /* dropdown1 styles */
+  
+    
       .dropdown1 {
         position: relative;
         padding: 0;
-        /* margin: 0 0.3em; */
         border: none;
       }
       .dropdown:visited {
@@ -773,7 +773,12 @@
       .nav-item .a:active {
         color: blue !important;
       }
+
+    
+    
+    
     </style>
+    
   </head>
 
   <body>
@@ -860,17 +865,22 @@
                     >Courses ⏷
                   </a>
                 </div>
-                <ul id="course-items">
-                  {% for category in categories %}
-                  <li>
-                    <a
-                      href="{% url 'course:category_courses' category_id=category.id %}"
-                      style="font-size: 16px"
-                      >{{category.name }}
-                    </a>
-                  </li>
-                  {% endfor %}
+                <ul id="course-items" class="dropdown-menu">
+            {% for category, courses in courses_by_category.items %}
+            <li class="dropdown-item">
+                <a href="{% url 'course:category_courses' category_id=category.id %}" style="font-size: 16px">
+                    {{ category.name }}
+                </a>
+                <ul class="sub-courses-list">
+                    {% for course in courses %}
+                    <li>
+                        <a href="{% url 'course:category_courses' category_id=course.id %}"> {{ course.title }}</a>
+                    </li>
+                    {% endfor %}
                 </ul>
+            </li>
+            {% endfor %}
+        </ul>
               </div>
               <!-- <ul class="sub-courses-list"></ul> -->
             </li>
