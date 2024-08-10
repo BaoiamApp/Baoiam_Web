@@ -105,23 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }else{
       courseItems.style.display = "none";
     }
-  
+
   })
 });
-
-// navbarCoursesDropdownMenu.onclick = ()=>{
-//   const navbarCoursesDropdownMenu = document.querySelector("#nav-courses-one .dropdown-menu")
-
-//   if(navbarCoursesDropdownMenu.style.display !== "block")
-//     navbarCoursesDropdownMenu.style.display = "block";
-
-// }
-
-// navbar functionality
-
-//  const company = document.querySelector('#company');
-//  const companyItems = document.querySelector('#company-items');
-
-//  company.addEventListener('click', ()=>{
-
-//  })
