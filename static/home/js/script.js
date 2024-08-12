@@ -2,12 +2,12 @@
   
   // Javascript for tab
   
-  $(window).bind('load', function() {
-      document.querySelector('#tab-1').classList.add('current-tab')
-  });
+  // $(window).bind('load', function() {
+  //     document.querySelector('#tab-1').classList.add('current-tab')
+  // });
   
   
-  var tabItems1 = document.querySelectorAll('.tab-item');
+  var tabItems1 = document.querySelectorAll('.downloads-item');
   var tabContentItems = document.querySelectorAll('.tab-content-item');
   
   // Select tab content item
