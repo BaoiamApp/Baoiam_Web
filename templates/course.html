@@ -36,6 +36,34 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
 <!-- </head>
 
 <body> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+  <script>
+    const swiperEl = document.querySelector('swiper-container')
+    Object.assign(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
+      },
+    });
+    swiperEl.initialize();
+    </script>
+  
   <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
     {% csrf_token %}
     <div class="popup-form-content">
@@ -58,10 +86,13 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <div class="containerr">
     <div>
       <div class="topsection1-container">
+        
+        {% for course in courses %}
+        {% if course.category.name != "Grade 5-8" and course.category.name != "Grade 9-12" %}
         <div class="topsection1-content">
-          {% for course in courses %}
-          <h1>Earn upto 40LPA Package by enrolling <span>{{course.title}}</span></h1>
-          {% endfor %}
+                  <h1>Earn up to 40LPA Package by enrolling <span>{{ course.title }}</span></h1>
+            
+      
           <p>
             <b>100+</b> Courses covering all tech domains for you to learn and
             explore new opportunities. Learn from Industry Experts and land your
@@ -87,6 +118,16 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             </div>
           </div>
         </div>
+        
+        {% else %}
+       <!-- code to be written here -->
+        <h3> no data  </h3
+      
+  {% endif %}
+
+        {% endfor %}
+
+    
         {% for course in courses %}
         <div class="topsection1-image">
             <img src="{% static 'courses/img/asset.jpg' %}" alt="image" />
@@ -330,6 +371,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
   <!-- Testimonials -->
   <section class="testimonial">
     {% for course in courses %}
+    {% if course.category.testimonials.all %}
     <h2 class="testimonial-heading">Testimonials for <span class="underline">{{ course.category.name }}</span></h2>
     <div class="slide-container swiper">
         <div class="slide-content">
@@ -355,6 +397,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         <div class="swiper-button-prev swiper-navBtn"></div>
         <div class="swiper-pagination"></div>
     </div>
+    {% endif %}
     {% endfor %}
 </section>
 
