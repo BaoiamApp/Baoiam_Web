@@ -64,7 +64,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     swiperEl.initialize();
     </script>
   
-  <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
+  <!-- <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
     {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
@@ -82,10 +82,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       </select>
       <button type="submit" class="popup-submit">Submit</button>
     </div>
-  </form>
+  </form> -->
   <div class="containerr">
     <div>
-      <div class="topsection1-container">
+      <!-- <div class="topsection1-container">
         
         {% for course in courses %}
         {% if course.category.name != "Grade 5-8" and course.category.name != "Grade 9-12" %}
@@ -98,11 +98,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             explore new opportunities. Learn from Industry Experts and land your
             Dream Job.
           </p>
-          <!-- <div class="topsection1-input">
+          <div class="topsection1-input">
             <span class="material-symbols-outlined"> search </span>
             <input type="text" placeholder="What to learn?" />
             <button type="button">Explore</button>
-          </div> -->
+          </div>
           <div class="topsection1-countpart">
             <div class="class-1st">
               <h2 class="first">50+</h2>
@@ -120,7 +120,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
         
         {% else %}
-       <!-- code to be written here -->
+       code to be written here
         <h3> no data  </h3
       
   {% endif %}
@@ -141,8 +141,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             {% endfor %}
         </div>
         {% endfor %}
-      </div>
+      </div> -->
 
+      <div class="ban-div">
+        <img src="{% static 'courses\img\banner3.png' %}" alt="">
+      </div>
     </div>
 
         {% for course in courses %}
