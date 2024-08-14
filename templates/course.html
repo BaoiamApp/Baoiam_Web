@@ -64,7 +64,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     swiperEl.initialize();
     </script>
   
-  <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
+  <!-- <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
     {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
@@ -82,10 +82,10 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
       </select>
       <button type="submit" class="popup-submit">Submit</button>
     </div>
-  </form>
+  </form> -->
   <div class="containerr">
     <div>
-      <div class="topsection1-container">
+      <!-- <div class="topsection1-container">
         
         {% for course in courses %}
         {% if course.category.name != "Grade 5-8" and course.category.name != "Grade 9-12" %}
@@ -98,11 +98,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             explore new opportunities. Learn from Industry Experts and land your
             Dream Job.
           </p>
-          <!-- <div class="topsection1-input">
+          <div class="topsection1-input">
             <span class="material-symbols-outlined"> search </span>
             <input type="text" placeholder="What to learn?" />
             <button type="button">Explore</button>
-          </div> -->
+          </div>
           <div class="topsection1-countpart">
             <div class="class-1st">
               <h2 class="first">50+</h2>
@@ -120,7 +120,7 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         </div>
         
         {% else %}
-       <!-- code to be written here -->
+       code to be written here
         <h3> no data  </h3
       
   {% endif %}
@@ -141,8 +141,11 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
             {% endfor %}
         </div>
         {% endfor %}
-      </div>
+      </div> -->
 
+      <div class="ban-div">
+        <img src="{% static 'courses\img\banner3.png' %}" alt="">
+      </div>
     </div>
 
         {% for course in courses %}
@@ -407,60 +410,70 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
         Join With Us 
         Find<br />the <span class="underline">Right Course</span>
     </h2>
-    <div class="slider_wrapper">
+    <!-- <div class="slider_wrapper">
         <div class="splide">
             <div class="splide__track">
                 <div class="splide__list">
-                    {% for plan in subscription_course_plans %}
-                        <div class="splide__slide">
-                            <div class="content-box">
-                                <div class="content">
-                                    <div class="slide-name">{{ plan.subscription_plan.name }}</div>
-                                    <div class="temp">{{ plan.subscription_plan.description }}</div>
-                                    <div class="price">{{ plan.subscription_plan.price }}/Full course</div>
-                                    <ul class="course-content">
-                                      <li>{{ plan.course_features|linebreaks }}</li>
-                                    </ul>
-                                    <!-- {% if plan.subscription_plan.name == "Plus" %}
-                                        <ul class="course-content">
-                                            <li>{{ plan.course_features|linebreaks }}</li>
-                                        </ul>
-                                    
-                                    {% elif plan.subscription_plan.name == "Plus Combo" %}
-                                        <ul class="course-content">
-                                          <li>{{ plan.course_features|linebreaks }}</li>
-                                        </ul>
-                                    {% elif plan.subscription_plan.name == "Premium" %}
-                                        <ul class="course-content">
-                                          <li>{{ plan.course_features|linebreaks }}</li>
-                                        </ul>
-                                    {% elif plan.subscription_plan.name == "Premium Combo" %}
-                                        <ul class="course-content">
-                                          <li>{{ plan.course_features|linebreaks }}</li>
-                                        </ul>
-                                    {% elif plan.subscription_plan.name == "Pro" %}
-                                        <ul class="course-content">
-                                        <li>{{ plan.course_features|linebreaks }}</li>
-                                        </ul>
-                                    {% endif %} -->
-                                    <div  >
-                                    <form id="enroll-form" class="courses-enroll-btn" method="post" action="/subscription/create_purchase_record/">
-                                      {% csrf_token %}
-                                      <input type="text" name="course_id" id="course_id" value="{{ plan.course.id }}">
-                                      <input type="text" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
-                                      <input type="text" name="username" id="username" value="{{ request.user.username }}">
-                                      <button type="submit" class="enroll-btn">Enroll Now</button>
-                                    </form>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
+                    
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </div> -->
+    <swiper-container
+    class="swiper-plans"
+    space-between="30"
+    slides-per-view="3"
+navigation="true"
+loop="true"
+  >
+  {% for plan in subscription_course_plans %}
+  <swiper-slide class="splide__slide">
+        <div class="content-box">
+            <div class="content">
+                <div class="slide-name">{{ plan.subscription_plan.name }}</div>
+                <div class="temp">{{ plan.subscription_plan.description }}</div>
+                <div class="price">{{ plan.subscription_plan.price }}/Full course</div>
+                <ul class="course-content">
+                  <li>{{ plan.course_features|linebreaks }}</li>
+                </ul>
+                <!-- {% if plan.subscription_plan.name == "Plus" %}
+                    <ul class="course-content">
+                        <li>{{ plan.course_features|linebreaks }}</li>
+                    </ul>
+                
+                {% elif plan.subscription_plan.name == "Plus Combo" %}
+                    <ul class="course-content">
+                      <li>{{ plan.course_features|linebreaks }}</li>
+                    </ul>
+                {% elif plan.subscription_plan.name == "Premium" %}
+                    <ul class="course-content">
+                      <li>{{ plan.course_features|linebreaks }}</li>
+                    </ul>
+                {% elif plan.subscription_plan.name == "Premium Combo" %}
+                    <ul class="course-content">
+                      <li>{{ plan.course_features|linebreaks }}</li>
+                    </ul>
+                {% elif plan.subscription_plan.name == "Pro" %}
+                    <ul class="course-content">
+                    <li>{{ plan.course_features|linebreaks }}</li>
+                    </ul>
+                {% endif %} -->
+                <div  >
+                <form id="enroll-form" class="courses-enroll-btn" method="post" action="/subscription/create_purchase_record/">
+                  {% csrf_token %}
+                  <input type="text" name="course_id" id="course_id" value="{{ plan.course.id }}">
+                  <input type="text" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
+                  <input type="text" name="username" id="username" value="{{ request.user.username }}">
+                  <button type="submit" class="enroll-btn">Enroll Now</button>
+                </form>
+              </div>
+            </div>
+        </div>
+  </swiper-slide>
+{% endfor %}
+</swiper-container>
+    
+  </section>
 
   <div class="emi-container">
     <div class="emi_box">

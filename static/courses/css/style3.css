@@ -470,6 +470,20 @@
   }
 }
 
+.ban-div{
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 5.5rem;
+  height: 400px;
+}
+
+.ban-div img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 /* @media screen and (max-width: 390px) {
   .second-section-container {
     margin-left: 2rem;
@@ -1303,7 +1317,7 @@ footer p {
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 100%;
+  height: 59rem;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
