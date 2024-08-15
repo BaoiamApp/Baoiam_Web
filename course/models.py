@@ -10,7 +10,7 @@ import datetime
 
 class CourseCategory(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    file = models.FileField(null=True, upload_to='media/file/')
+    # file = models.FileField(null=True, upload_to='media/file/')
 
     def __str__(self):
         return self.name
@@ -25,6 +25,8 @@ class CourseCarriculum(models.Model):
 class Course(models.Model):
     category = models.ForeignKey(CourseCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
+    banner = models.FileField(null=True, blank=True, upload_to='course_banners/')
+    brochure = models.FileField(null=True, blank=True, upload_to='media/file/')
     description = models.TextField(null=True, blank=True)
     program_overview = models.TextField(null=True, blank=True)
     instructor = models.CharField(max_length=50)

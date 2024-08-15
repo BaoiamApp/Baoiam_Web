@@ -84,66 +84,63 @@ https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css
     </div>
   </form>
   <div class="containerr">
-    <div>
-      <div class="topsection1-container">
-        
-        {% for course in courses %}
-        {% if course.category.name != "Grade 5-8" and course.category.name != "Grade 9-12" %}
-        <div class="topsection1-content">
-                  <h1>Earn up to 40LPA Package by enrolling <span>{{ course.title }}</span></h1>
-            
-      
-          <p>
-            <b>100+</b> Courses covering all tech domains for you to learn and
-            explore new opportunities. Learn from Industry Experts and land your
-            Dream Job.
-          </p>
-          <!-- <div class="topsection1-input">
-            <span class="material-symbols-outlined"> search </span>
-            <input type="text" placeholder="What to learn?" />
-            <button type="button">Explore</button>
-          </div> -->
-          <div class="topsection1-countpart">
-            <div class="class-1st">
-              <h2 class="first">50+</h2>
-              <h3 class="first-h3">Courses to choose from</h3>
-            </div>
-            <div>
-              <h2 class="second">5000+</h2>
-              <h3>Students Trained</h3>
-            </div>
-            <div>
-              <h2 class="third">150+</h2>
-              <h3>Professional Trainers</h3>
+    {% for course in courses %}
+
+      {% if course.banner %}
+      <div class="image">
+        <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" />
+      </div>
+      {% endif %} 
+
+      {% if course.category.name != "School" %}
+        <div class="topsection1-container">
+          <div class="topsection1-content">
+            <h1>Earn up to 40LPA Package by enrolling <span>{{ course.title }}</span></h1>
+            <p>
+              <b>100+</b> Courses covering all tech domains for you to learn and
+              explore new opportunities. Learn from Industry Experts and land your
+              Dream Job.
+            </p>
+            <!-- <div class="topsection1-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder="What to learn?" />
+              <button type="button">Explore</button>
+            </div> -->
+            <div class="topsection1-countpart">
+              <div class="class-1st">
+                <h2 class="first">50+</h2>
+                <h3 class="first-h3">Courses to choose from</h3>
+              </div>
+              <div>
+                <h2 class="second">5000+</h2>
+                <h3>Students Trained</h3>
+              </div>
+              <div>
+                <h2 class="third">150+</h2>
+                <h3>Professional Trainers</h3>
+              </div>
             </div>
           </div>
-        </div>
-        
-        {% else %}
-       <!-- code to be written here -->
-        <h3> no data  </h3
-      
-  {% endif %}
-
-        {% endfor %}
-
-    
-        {% for course in courses %}
-        <div class="topsection1-image">
+  
+          <div class="topsection1-image">
             <img src="{% static 'courses/img/asset.jpg' %}" alt="image" />
-            {% for category in categories %}
-                {% if category.file and category.id == course.category.id %}
-                    <div class="topsection1-button">
-                        <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
-                        <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a>
-                    </div>
-                {% endif %}
-            {% endfor %}
+            {% comment %} {% for category in categories %}
+              {% if category.file and category.id == course.category.id %} {% endcomment %}
+                <div class="topsection1-button">
+                  <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
+                  {% comment %} <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a> {% endcomment %}
+                  {% if course.brochure %}
+                  <a href="{% url 'course:download_file' file_id=course.id %}" class="broucher">DOWNLOAD BROCHURE</a>
+                  {% endif %}
+                </div>
+              {% comment %} {% endif %}
+            {% endfor %} {% endcomment %}
+          </div>
         </div>
-        {% endfor %}
-      </div>
-
-    </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  
 
         {% for course in courses %}
         <div class="second-section-container">
