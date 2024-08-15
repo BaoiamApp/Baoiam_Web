@@ -25,7 +25,12 @@
   justify-content: center;
   margin: auto;
 }
-
+@media (min-width: 320px) {
+  .bnrImg{
+    width: 100%; 
+    height: 200px; 
+    }
+}
 .underline {
   position: relative;
   background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
