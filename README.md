@@ -62,7 +62,8 @@ pip install django-cors-headers
 
 python manage.py makemigrations
 python manage.py migrate
-python manage.py runserver
+python manage.py runserver   
+python manage.py livereload  #(sepeate terminal run along with runserver)
 
 TO CREATE SUPERUSER:
 python manage.py createsuperuser
