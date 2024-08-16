@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'livereload',
+    # 'livereload',
     'jazzmin', 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'livereload.middleware.LiveReloadScript',
+    # 'livereload.middleware.LiveReloadScript',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -90,6 +90,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.categories_processor',
             ],
         },
     },
