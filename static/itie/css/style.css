@@ -11,12 +11,15 @@ body {
 
 .underline {
   position: relative;
-  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
+  background:linear-gradient(0deg, #fa2424, #fb8721);
   -webkit-background-clip: text;
+  
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid rgb(245, 69, 0);
   margin-bottom: 3rem;
   font-weight: bold;
+  text-align:center;
+  width:100%
 }
 
 .containerr {
@@ -328,12 +331,17 @@ body {
 
 .section-two {
   position: relative;
-  display: flex;
-  margin: 6rem 0 4rem 0;
+  display: grid;
+  margin: 0rem 0 4rem 0;
   justify-content: space-evenly;
   align-items: center;
   background-color: #fff;
+  grid-template-columns: 50% 50%;
+  width:100%
 }
+
+
+
 
 .section-two h2 {
   color: rgb(1, 1, 68);
@@ -353,24 +361,31 @@ body {
 .section-two p {
   font-size: 1.2rem;
   color: #777;
-  width: 95%;
   font-weight: 500;
-  line-height: 1.8;
-  text-align: center;
+  line-height: 1.6;
+  text-align: left;
+  padding-left: 6rem;
+  padding-right: 0rem;
+  padding-top: 4rem;
+  padding-bottom: 1rem;
 }
+
 
 .section-two h6 {
   font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 1.5rem;
-  text-align: center;
+  text-align: left;
+  margin-left:5rem;
+
 }
 
 .section-two img {
-  height: 310px;
+  height: 428px;
   border-radius: 25px;
-  width: 50%;
+  width: 100%;
   z-index: 1;
+  padding:2rem;
+  padding-right:4rem;
 }
 
 .section-two .circle_one {
@@ -398,8 +413,51 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+  }}
+
+
+
+ @media (max-width: 600px){
+  .section-two p {
+    padding:1rem;
   }
-}
+  .section-two h6{
+    margin:1rem;
+  }
+ }
+  @media (min-width: 600px){
+  .section-two p {
+    padding:1rem;
+  }
+  .section-two h6{
+    margin:1rem;
+  }
+ }
+ @media (min-width: 800px){
+  .section-two p{
+    font-size:1rem;
+    margin-top:2rem;
+  }
+  .section-two img{
+    padding-top:0px;
+    padding-right:2rem;
+  }
+ }
+ @media (min-width: 1100px){
+  .section-two p{
+    font-size:1.1rem;
+    margin-left:4rem;
+  }
+  .section-two h6{
+    margin-left:4rem;
+  }
+  .section-two img{
+    padding-top:0px;
+    padding-right:2rem;
+    padding-left:0px;
+  }
+ }
+
 
 @media (max-width: 450px) {
   .section-two img {
