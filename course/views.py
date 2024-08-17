@@ -35,7 +35,7 @@ def category_courses(request, category_id):
     request.session['category_ID'] = category.id
     courses = Course.objects.filter(id=category_id, status='active')
     categories = CourseCategory.objects.all()
-    
+        
     # batches = Batch.objects.get(course=course)
     # 'currently batches has been commented out for DoesNotExist error since batches is associated with course and course using category id'
 
@@ -180,9 +180,10 @@ def category_courses_json(request, category_id):
 class DownloadFileView(View):
     def get(self, category_id,file_id):
         category_id = file_id
-        category = get_object_or_404(CourseCategory, pk=file_id)
-        file_content = category.file.read()
-        file_name = category.file.name
+        # category = get_object_or_404(CourseCategory, pk=file_id)
+        course = get_object_or_404(Course, pk=file_id)
+        file_content = course.brochure.read()
+        file_name = course.brochure.name
         response = HttpResponse(file_content, content_type='application/octet-stream')
         response['Content-Disposition'] = f'attachment; filename="{file_name}"'
 

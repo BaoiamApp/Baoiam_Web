@@ -590,7 +590,7 @@ header img {
 
 .div_text {
   text-align: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 
 .div_text:hover {
@@ -599,10 +599,13 @@ header img {
 
 .div_text h2 {
   padding: 10px;
+  text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .row_first p {
@@ -1148,11 +1151,11 @@ section.we-work .content-steps p {
     width: 25em;
   }
 
-  #baoiam-info .mr-lr-0 {
+  /* #baoiam-info .mr-lr-0 {
     column-gap: 2em;
     margin: auto 0;
     justify-content: center;
-  }
+  } */
 
   #baoiam-info .align-center {
     max-width: 45%;
