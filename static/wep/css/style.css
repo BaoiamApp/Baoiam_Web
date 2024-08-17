@@ -290,6 +290,8 @@ body {
   /* padding: right; */
   padding-right: 0.5rem;
   margin-bottom: 1rem;
+  display:flex;
+  flex-direction: column;
 }
 
 .section-two h2 {
@@ -2644,6 +2646,7 @@ input[type="radio"] {
     background-color: #fff;
     gap: 10px;
     grid-template-columns:40% 60%;
+    margin-top: 4rem;
   }
   .section-two img {
     height: 23rem;
@@ -2653,12 +2656,23 @@ input[type="radio"] {
     margin-left: 0rem;
   }
   .section-two p {
-    font-size: 1vw;
+    font-size: 1.3vw;
     margin-top: 2rem;
-    width: 40vw;
+    width: 50vw;
+    text-align:left;
   }
   .section-two div{
-    width:40vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0 4rem;
+  }
+  }
+@media(min-width:980px){
+  .section-two h6{
+    /* font-size:3vw; */
+    margin-left:1.2rem;
+    margin-left: 1rem;
   }
 }
 
