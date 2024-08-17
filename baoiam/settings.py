@@ -177,7 +177,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # For Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '703254856844-cobffnq2eph2pj92qfhnokbln7q90grr.apps.googleusercontent.co'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '703254856844-cobffnq2eph2pj92qfhnokbln7q90grr.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 # For Github
