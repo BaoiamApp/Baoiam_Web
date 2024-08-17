@@ -12,8 +12,6 @@ allSideMenu.forEach(item => {
 });
 
 
-
-
 // TOGGLE SIDEBAR
 const menuBar = document.querySelector('#content nav .bx.bx-menu');
 const sidebar = document.getElementById('sidebar');
@@ -24,28 +22,24 @@ menuBar.addEventListener('click', function () {
 
 
 
-
-
-
-
 // Selecting elements
 const searchButton = document.querySelector('#search-btn');
 const searchButtonIcon = searchButton.querySelector('.bx');
 const searchForm = document.querySelector('#search-form');
 
 // Event listener for the search button
-searchButton.addEventListener('click', function(e) {
-    if (window.innerWidth < 576) {
-        e.preventDefault();
-        searchForm.classList.toggle('show');
+searchButton.addEventListener('click', function (e) {
+	if (window.innerWidth < 576) {
+		e.preventDefault();
+		searchForm.classList.toggle('show');
 
-        // Toggle icon based on form visibility
-        if (searchForm.classList.contains('show')) {
-            searchButtonIcon.classList.replace('bx-search', 'bx-x');
-        } else {
-            searchButtonIcon.classList.replace('bx-x', 'bx-search');
-        }
-    }
+		// Toggle icon based on form visibility
+		if (searchForm.classList.contains('show')) {
+			searchButtonIcon.classList.replace('bx-search', 'bx-x');
+		} else {
+			searchButtonIcon.classList.replace('bx-x', 'bx-search');
+		}
+	}
 });
 
 
@@ -53,16 +47,12 @@ searchButton.addEventListener('click', function(e) {
 const notificationIcon = document.querySelector('#notifications');
 
 // Event listener for the notification icon
-notificationIcon.addEventListener('click', function() {
-    // Example action: Display an alert
-    alert('You have new notifications!');
-    // Alternatively, you could toggle a notifications menu or panel here
-    // document.querySelector('#notifications-menu').classList.toggle('show');
+notificationIcon.addEventListener('click', function () {
+	// Example action: Display an alert
+	alert('You have new notifications!');
+	// Alternatively, you could toggle a notifications menu or panel here
+	// document.querySelector('#notifications-menu').classList.toggle('show');
 });
-
-
-
-
 
 
 if (window.innerWidth < 768) {
@@ -82,55 +72,75 @@ window.addEventListener('resize', function () {
 
 
 
-// Check if dark mode preference is saved in localStorage
-const isDarkMode = localStorage.getItem('darkMode') === 'true';
 
-// Function to set dark mode based on stored preference
-function setDarkMode() {
-	if (isDarkMode) {
-		document.body.classList.add('dark');
-		document.getElementById('switch-mode').checked = true;
-	} else {
-		document.body.classList.remove('dark');
-		document.getElementById('switch-mode').checked = false;
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	var email = "{{user.username}}";  // Replace with actual method to get username
+	var username = email.split('@')[0];
+	document.getElementById('username-link').textContent = username;
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+	// Extract username from Django template
+	const username = "{{ user.username }}";
+
+	// Function to get current time and generate a greeting message
+	function getGreetingMessage() {
+		const now = new Date();
+		const hours = now.getHours();
+		let greeting;
+
+		if (hours < 12) {
+			greeting = 'Good morning';
+		} else if (hours < 18) {
+			greeting = 'Good afternoon';
+		} else {
+			greeting = 'Good evening';
+		}
+
+		return greeting;
 	}
-}
 
-// Apply dark mode on initial load
-setDarkMode();
-
-// Toggle dark mode on checkbox change
-const switchMode = document.getElementById('switch-mode');
-switchMode.addEventListener('change', function () {
-	if (this.checked) {
-		document.body.classList.add('dark');
-		localStorage.setItem('darkMode', 'true');
-	} else {
-		document.body.classList.remove('dark');
-		localStorage.setItem('darkMode', 'false');
+	// Update the greeting message in the HTML
+	const greetingMessageElement = document.getElementById('greeting-message');
+	if (greetingMessageElement) {
+		const greetingMessage = getGreetingMessage();
+		greetingMessageElement.textContent = `${greetingMessage}`;
 	}
 });
 
+function toggleLogo() {
+	const logoImg = document.getElementById('logo-img');
+	logoImg.classList.toggle('hidden');
+}
 
-// JavaScript to toggle the modal
 document.addEventListener('DOMContentLoaded', function() {
-    var profileLink = document.querySelector('.pofile');
-    var modal = document.getElementById('user-details-modal');
-    var closeButton = document.querySelector('.close');
+    // Get references to modal and its components
+    const modal = document.getElementById('user-details-modal');
+    const closeModal = modal.querySelector('.close');
+    const profileLink = document.getElementById('profile-link');
 
-    // Show modal when profile link is clicked
-    profileLink.addEventListener('click', function(event) {
-        event.preventDefault();
-        modal.style.display = 'block';
+    // Open modal and populate data
+    profileLink.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Show the modal
+        modal.style.display = 'flex';
     });
 
-    // Close modal when close button or outside modal is clicked
-    closeButton.addEventListener('click', function() {
+    // Close modal when close button is clicked
+    closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
+    // Close modal when clicking outside of the modal content
     window.addEventListener('click', function(event) {
-        if (event.target == modal) {
+        if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
@@ -138,35 +148,122 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-// Sample data (you can replace this with your actual data)
-const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const subscriptions = [100, 150, 120, 180, 200, 220, 250, 300, 280, 320, 350, 380];
 
-// Get the canvas element
-const ctx = document.getElementById('subscriptionChart').getContext('2d');
 
-// Create the chart
-const myChart = new Chart(ctx, {
-	type: 'bar',
-	data: {
-		labels: months,
-		datasets: [{
-			label: 'Total Subscriptions',
-			data: subscriptions,
-			backgroundColor: 'rgba(54, 162, 235, 0.5)', // Blue color with transparency
-			borderColor: 'rgba(54, 162, 235, 1)', // Blue color
-			borderWidth: 1
-		}]
-	},
-	options: {
-		scales: {
-			yAxes: [{
-				ticks: {
-					beginAtZero: true
-				}
-			}]
-		}
-	}
+document.addEventListener('DOMContentLoaded', function () {
+	const profileSidebarLink = document.getElementById('profile-sidebar-link');
+    const profileSection = document.getElementById('profile-section');
+
+    if (profileSidebarLink && profileSection) {
+        profileSidebarLink.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            
+            // Hide all sections except profile
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            profileSection.style.display = 'block'; // Show profile section
+        });
+    }
+})
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Toggle the visibility of the course container
+	const courseSidebarLink = document.getElementById('course-sidebar-link');
+    const courseContainer = document.getElementById('course-section');
+
+    if (courseSidebarLink && courseContainer) {
+        courseSidebarLink.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            
+            // Hide all sections except course
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            courseContainer.style.display = 'block'; // Show course section
+        });
+    }
+
+    // Handle course details visibility
+    document.querySelectorAll('.course-title').forEach(button => {
+        button.addEventListener('click', function () {
+            const courseId = this.getAttribute('data-course-id');
+            toggleCourseDetails(courseId);
+        });
+    });
 });
 
+function toggleCourseDetails(courseId) {
+	// Get all course details elements
+	const allDetailsElements = document.querySelectorAll('.course-details');
 
+	// Hide all course details elements except the one being clicked
+	allDetailsElements.forEach(function (element) {
+		if (element.id !== `details-course-${courseId}`) {
+			element.style.display = 'none';
+		}
+	});
+
+	// Show or hide the clicked course details element
+	const detailsElement = document.getElementById(`details-course-${courseId}`);
+	if (detailsElement) {
+		detailsElement.style.display = 'block';
+	} else {
+		console.error(`Element with id "details-course-${courseId}" not found.`);
+	}
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+	// Handle certificate section visibility
+    const certificateSidebarLink = document.getElementById('certificate-sidebar-link');
+    const certificateSection = document.getElementById('certificate-section');
+
+    if (certificateSidebarLink && certificateSection) {
+        certificateSidebarLink.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            
+            // Hide all sections except certificate
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            certificateSection.style.display = 'block'; // Show certificate section
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Handle livestream section visibility
+    const livestreamSidebarLink = document.getElementById('livestream-sidebar-link');
+    const livestreamSection = document.getElementById('livestream-section');
+
+    if (livestreamSidebarLink && livestreamSection) {
+        livestreamSidebarLink.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default link behavior
+            
+            // Hide all sections except livestream
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            livestreamSection.style.display = 'block'; // Show livestream section
+        });
+    }
+
+    // Handle live card interactions
+    document.querySelectorAll('.live-card').forEach(card => {
+        card.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const content = document.getElementById(targetId);
+
+            // Toggle visibility of the content
+            if (content) {
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            }
+        });
+    });
+});
