@@ -32,10 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-<<<<<<< HEAD
-=======
-    # 'livereload',
->>>>>>> 8a0863e0f96553ae251f160cfec480c411bfb47e
+    'livereload',
     'jazzmin', 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -66,11 +63,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-<<<<<<< HEAD
-    
-=======
-    # 'livereload.middleware.LiveReloadScript',
->>>>>>> 8a0863e0f96553ae251f160cfec480c411bfb47e
+    'livereload.middleware.LiveReloadScript',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
