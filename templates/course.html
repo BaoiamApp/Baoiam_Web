@@ -4,130 +4,109 @@
 <!-- <link rel="stylesheet" href="{% static 'courses\css\style3.css' %}"> -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-<script>
-  const swiperEl = document.querySelector('swiper-container')
-  Object.assign(swiperEl, {
-    slidesPerView: 1,
-    spaceBetween: 10,
-    pagination: {
-      clickable: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 2,
-        spaceBetween: 20,
+  <script>
+    const swiperEl = document.querySelector('swiper-container')
+    Object.assign(swiperEl, {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        clickable: true,
       },
-      768: {
-        slidesPerView: 4,
-        spaceBetween: 40,
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 4,
+          spaceBetween: 40,
+        },
+        1024: {
+          slidesPerView: 5,
+          spaceBetween: 50,
+        },
       },
-      1024: {
-        slidesPerView: 5,
-        spaceBetween: 50,
-      },
-    },
-  });
-  swiperEl.initialize();
-</script>
+    });
+    swiperEl.initialize();
+    </script>
+  
+  <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
+    {% csrf_token %}
+    <div class="popup-form-content">
+      <div class="close" id="popup-close">&times;</div>
+      <lable for="name" id="name">Name</lable>
+      <input id="name" type="text" name="name_" />
+      <lable for="email" id="email">Email</lable>
+      <input id="email" type="email" name="email_"/>
+      <lable for="mobile" id="mobile">Mobile</lable>
+      <input id="mobile" type="text" name="mobile_"/>
+      <label for="professionSelect" id="professionLabel">Profession</label>
+      <select id="professionSelect" name="profession_">
+        <option value="student">Student</option>
+        <option value="teacher">Passed out</option>
+        <option value="engineer">Working Professional</option>
+      </select>
+      <button type="submit" class="popup-submit">Submit</button>
+    </div>
+  </form>
+  <div class="containerr">
+    {% for course in courses %}
 
-<!-- <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
-  {% csrf_token %}
-  <div class="popup-form-content">
-    <div class="close" id="popup-close">&times;</div>
-    <lable for="name" id="name">Name</lable>
-    <input id="name" type="text" name="name_" />
-    <lable for="email" id="email">Email</lable>
-    <input id="email" type="email" name="email_" />
-    <lable for="mobile" id="mobile">Mobile</lable>
-    <input id="mobile" type="text" name="mobile_" />
-    <label for="professionSelect" id="professionLabel">Profession</label>
-    <select id="professionSelect" name="profession_">
-      <option value="student">Student</option>
-      <option value="teacher">Passed out</option>
-      <option value="engineer">Working Professional</option>
-    </select>
-    <button type="submit" class="popup-submit">Submit</button>
-  </div>
-</form> -->
+      {% if course.banner %}
+      <div class="image">
+        <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" />
+      </div>
+      {% endif %} 
 
-<div class="containerr">
-  <!-- <img src="static\courses\img\UXUIX.png" alt="uxui"> -->
-  <div 
-  class="bnrImg " 
-  style="
-  width: 100%; 
-  height: 100%; 
-  margin: 4.5rem auto 0;
-  border-radius: 10px;
-  overflow: hidden;
-  ">
-    <img 
-    src="{% if '/course/categories/1/' in request.path %}{% static 'courses\img\uxui.png' %}{% endif %}
-    {% if '/course/categories/2/' in request.path %}{% static 'courses\img\WebDev.png' %}{% endif %}
-    {% if '/course/categories/3/' in request.path %}{% static 'courses\img\Graphic.png' %}{% endif %}
-    {% if '/course/categories/4/' in request.path %}{% static 'courses\img\humnResource.png' %}{% endif %}
-    {% if '/course/categories/5/' in request.path %}{% static 'courses\img\dataAnalytics.png' %}{% endif %}
-    {% if '/course/categories/6/' in request.path %}{% static 'courses\img\productM.png' %}{% endif %}
-    {% if '/course/categories/7/' in request.path %}{% static 'courses\img\androiddev.png' %}{% endif %}
-    {% if '/course/categories/8/' in request.path %}{% static 'courses\img\digitalMarketing.png' %}{% endif %}
-    {% if '/course/categories/9/' in request.path %}{% static 'courses\img\seoDev.png' %}{% endif %}
-    {% if '/course/categories/10/' in request.path %}{% static 'courses\img\digitalMarketing.png' %}{% endif %}
-    {% if '/course/categories/11/' in request.path %}{% static 'courses\img\creativeWriting.png' %}{% endif %}
-    {% if '/course/categories/12/' in request.path %}{% static 'courses\img\Art&Craft.png' %}{% endif %}
-    {% if '/course/categories/13/' in request.path %}{% static 'courses\img\CriticalThinking.png' %}{% endif %}
-    " 
-    alt="uxui" 
-    class="bg-cover"
-    style="width: 100%;
-    height: 100%;
-    background-position: cover;
-    ">
-  </div>
-  <h1 class="font-bold">hello testing testing...Laxmiii is here</h1>
-  <div>
-    <!-- <div class="topsection1-container"> -->
-
-      <!-- {% for course in courses %} -->
-      <!-- {% if course.category.name != "Grade 5-8" and course.category.name != "Grade 9-12" %} -->
-      <!-- <div class="topsection1-content">
-        <h1>Earn up to 40LPA Package by enrolling <span>{{ course.title }}</span></h1>
-        <p>
-          <b>100+</b> Courses covering all tech domains for you to learn and
-          explore new opportunities. Learn from Industry Experts and land your
-          Dream Job.
-        </p>
-        <div class="topsection1-countpart">
-          <div class="class-1st">
-            <h2 class="first">50+</h2>
-            <h3 class="first-h3">Courses to choose from</h3>
+      {% if course.category.name != "School" %}
+        <div class="topsection1-container">
+          <div class="topsection1-content">
+            <h1>Earn up to 40LPA Package by enrolling <span>{{ course.title }}</span></h1>
+            <p>
+              <b>100+</b> Courses covering all tech domains for you to learn and
+              explore new opportunities. Learn from Industry Experts and land your
+              Dream Job.
+            </p>
+            <!-- <div class="topsection1-input">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder="What to learn?" />
+              <button type="button">Explore</button>
+            </div> -->
+            <div class="topsection1-countpart">
+              <div class="class-1st">
+                <h2 class="first">50+</h2>
+                <h3 class="first-h3">Courses to choose from</h3>
+              </div>
+              <div>
+                <h2 class="second">5000+</h2>
+                <h3>Students Trained</h3>
+              </div>
+              <div>
+                <h2 class="third">150+</h2>
+                <h3>Professional Trainers</h3>
+              </div>
+            </div>
           </div>
-          <div>
-            <h2 class="second">5000+</h2>
-            <h3>Students Trained</h3>
-          </div>
-          <div>
-            <h2 class="third">150+</h2>
-            <h3>Professional Trainers</h3>
+  
+          <div class="topsection1-image">
+            <img src="{% static 'courses/img/asset.jpg' %}" alt="image" />
+            {% comment %} {% for category in categories %}
+              {% if category.file and category.id == course.category.id %} {% endcomment %}
+                <div class="topsection1-button">
+                  <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
+                  {% comment %} <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a> {% endcomment %}
+                  {% if course.brochure %}
+                  <a href="{% url 'course:download_file' file_id=course.id %}" class="broucher">DOWNLOAD BROCHURE</a>
+                  {% endif %}
+                </div>
+              {% comment %} {% endif %}
+            {% endfor %} {% endcomment %}
           </div>
         </div>
-      </div> -->
-
-      <!-- {% else %} -->
-      <!-- code to be written here -->
-      <!-- <h3> no data </h3> {% endif %} {% endfor %} {% for course in courses %} <div class="topsection1-image"> -->
-      <!-- <img src="{% static 'courses/img/asset.jpg' %}" alt="image" /> -->
-      <!-- {% for category in categories %} -->
-      <!-- {% if category.file and category.id == course.category.id %} -->
-      <!-- <div class="topsection1-button">
-        <button class="interested button-one" onclick="openForm()">I AM INTERESTED</button>
-        <a href="{% url 'course:download_file' file_id=category.id %}" class="broucher">DOWNLOAD BROCHURE</a>
-      </div>
       {% endif %}
-      {% endfor %}
-    </div>
-    {% endfor %} -->
+    {% endfor %}
   </div>
-</div>
+  
 
 {% for course in courses %}
 <div class="second-section-container">
