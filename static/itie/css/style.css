@@ -389,7 +389,7 @@ body {
   text-align: left;
   padding-left: 6rem;
   padding-right: 0rem;
-  padding-top: 4rem;
+  /* padding-top: 4rem; */
   padding-bottom: 1rem;
 }
 
@@ -481,10 +481,6 @@ body {
   } */
 }
 @media (min-width: 1100px) {
-  .section-two p {
-    font-size: 1.1rem;
-    margin-left: 4rem;
-  }
   .section-two h6 {
     margin-left: 4rem;
   }
@@ -1696,7 +1692,7 @@ body {
 
 @media (max-width: 450px) {
   .section-one h1 {
-    font-size: 22px;
+    font-size: 1.5rem;
     line-height: 30px;
     text-align: center;
   }
@@ -1708,6 +1704,7 @@ body {
     margin-left: -20px;
     padding-left: 0px;
     margin-right: -20px;
+    padding-bottom: 0;
   }
 
   .section-one h4 {
@@ -1716,6 +1713,7 @@ body {
 
   .section-one p {
     font-size: 12px;
+    padding-inline: 1rem;
   }
 
   .section-one .button-one {
@@ -1746,8 +1744,8 @@ body {
   }
 
   .section-two h2 {
-    font-size: 20px;
-    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
   }
 
   .section-two h6 {
@@ -1759,6 +1757,11 @@ body {
     display: none;
   }
 
+  .section-three ul{
+    grid-template-columns: repeat(1, minmax(150px, 1fr));
+    width: 20rem;
+  }
+
   .section-two div {
     /* margin-left: -41px;
     margin-right: -58px;
@@ -1768,7 +1771,7 @@ body {
 
 @media (max-width: 450px) {
   .section-three h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
   }
 
@@ -1782,7 +1785,14 @@ body {
 
   .section-three .divide {
     width: 70%;
-    font-size: 14px;
+  }
+
+  .section-three li h4{
+    font-size: 1rem;
+  }
+
+  .section-three li p{
+    font-size: 0.8rem;
   }
 
   .section-three {
@@ -1797,7 +1807,7 @@ body {
 
 @media (max-width: 450px) {
   .section-four h2 {
-    font-size: 22px;
+    font-size: 2rem;
     padding-top: 1rem;
   }
 
