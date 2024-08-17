@@ -25,7 +25,12 @@
   justify-content: center;
   margin: auto;
 }
-
+@media (min-width: 320px) {
+  .bnrImg{
+    width: 100%; 
+    height: 200px; 
+    }
+}
 .underline {
   position: relative;
   background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
@@ -87,6 +92,35 @@
   border-radius: 6px;
 }
 
+   /* Carousel section */
+   .swiper-container {
+    margin-top: 4rem;
+    height: 60vh !important;
+    /* border: 1px solid ; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+    border-radius: 1rem;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+  }
+  
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .course-img{
+    height:10vh;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height:100% ;
+    object-fit: cover;
+  }
+  
 @media screen and (max-width: 680px) {
   .popup-form {
     left: 20%;
@@ -440,6 +474,20 @@
     padding: 0;
   }
 }
+
+.ban-div{
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 5.5rem;
+  height: 400px;
+}
+
+.ban-div img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 
 /* @media screen and (max-width: 390px) {
   .second-section-container {
@@ -1274,7 +1322,7 @@ footer p {
 .content-box {
   /* max-width: 90%; */
   width: 90%;
-  height: 100%;
+  height: 59rem;
   border-radius: 5%;
   background: #fff;
   border-radius: 30px;
