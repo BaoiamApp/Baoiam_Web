@@ -53,8 +53,10 @@
     {% for course in courses %}
 
       {% if course.banner %}
-      <div class="image">
-        <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" />
+      <div class="image"
+      style="width: 100%; height: 100%;margin: 3rem 0 0;"
+      >
+        <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" style="width: 100%; height: 100%; background-position: contain;" />
       </div>
       {% endif %} 
 
