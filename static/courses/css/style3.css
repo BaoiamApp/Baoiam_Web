@@ -324,17 +324,19 @@
 
 .second-section-container {
   margin: 2rem auto;
-  display: flex;
-  box-shadow: 0px 0px 9px rgb(180, 179, 179);
+  /* display: flex; */
+  /* box-shadow: 0px 0px 9px rgb(180, 179, 179); */
   /* flex-wrap: wrap; */
   border-radius: 10px;
   margin: 4rem 4rem 6rem 4rem;
+  align-items: center;
+  border: 1px solid;
   display: flex;
   padding: 2rem;
 }
 
 .second-section-div1 {
-  width: 50%;
+  width: 40%;
   height: 27rem;
   display: flex;
   justify-content: center;
@@ -342,18 +344,18 @@
 }
 
 .second-section-div1 img {
-  width: 59%;
-    object-fit: cover;
-    height: 100%;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  /* width: 59%; */
+  object-fit: contain;
+  height: 100%;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .second-section-div2 {
-  width: 50%;
+  width: 60%;
 }
 
 .second-section-div2 h2 {
