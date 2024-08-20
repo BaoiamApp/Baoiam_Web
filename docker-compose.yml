@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: avyakta000/baoiam-app:latest
+    image: avyakta000/ancient-baoiam-app:latest
     build:
       context: .
       dockerfile: Dockerfile
