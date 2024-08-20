@@ -164,7 +164,7 @@ input::placeholder {
     /* background-color: red; */
     margin: 0 7.2px;
     padding: 3px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     align-items: center;
     justify-content: center;
