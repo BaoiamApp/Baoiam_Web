@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   courseDropdown.addEventListener("click", (event)=>{
     event.stopPropagation()
-    if(courseItems.style.display !== "grid"){
+    if(courseItems.style.display !== "flex"){
       companyItemsDropdown.style.display = "none";
       // changed for styling purpose "block"
-      courseItems.style.display = "grid";
+      courseItems.style.display = "flex";
     }else{
       courseItems.style.display = "none";
     }

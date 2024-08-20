@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-(b^%-!lms9ykkagp)2h9^$lk5w-(6-n3i45o#t&=&5%f$$-oa^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.baoiam.com','baoiam.com']
 
 
 # Application definition
@@ -178,8 +178,8 @@ AUTHENTICATION_BACKENDS = [
 
 
 # For Google
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '703254856844-cobffnq2eph2pj92qfhnokbln7q90grr.apps.googleusercontent.co'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "802970042014-bbq707u390sn2nmcr7ujqn1src1b2po3.apps.googleusercontent.com"
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"
 
 # For Github
 SOCIAL_AUTH_GITHUB_KEY = '9c5760417d3d9e11cc05'
