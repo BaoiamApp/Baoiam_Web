@@ -572,9 +572,9 @@
         -webkit-text-fill-color: transparent;
       }
       *::-webkit-scrollbar {
-        width: 1em;
+        width: 1px;
       }
-      *::-webkit-scrollbar-thumb {
+      /* *::-webkit-scrollbar-thumb {
         background-color: #fa6124;
         border-radius: 90px;
       }
@@ -582,7 +582,7 @@
         background-color: darkgray;
         border-left: 5px solid white;
         border-right: 5px solid white;
-      }
+      }*/
       * Boring button styles */ a.button {
         /* Frame */
         display: inline-block;
@@ -687,6 +687,10 @@
           scroll-behavior: smooth;
         }
       }
+
+      #navbar {
+        border-bottom: 2px solid #b9b9b9;
+      }
     </style>
 
 
@@ -696,7 +700,7 @@
     <header>
       <!-- navbar -->
       <nav
-        class="navbar fixed-top navbar-expand-xl navbar-light bg-white shadow h-8"
+        class="navbar fixed-top navbar-expand-xl navbar-light bg-white h-8"
         id="navbar"
       >
         <!-- ------Brand Logo------- -->

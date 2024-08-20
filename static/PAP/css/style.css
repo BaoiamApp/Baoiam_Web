@@ -22,10 +22,10 @@
 }
 
 .first-half {
-  display: flex;
+  /* display: flex; */
   padding: 3rem;
-  margin-top: 3rem;
-  justify-content: space-evenly;
+  margin-top: 2rem;
+  /* justify-content: space-evenly; */
   margin-bottom: 1rem;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .first-half img {
-  width: 25vw;
+  width: 100%;
   /* width: 40vw; */
   /* border-radius: 30px; */
   margin-left: 2rem;

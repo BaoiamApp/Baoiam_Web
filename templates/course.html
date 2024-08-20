@@ -108,13 +108,13 @@
 {% for course in courses %}
 <div class="second-section-container">
   <div class="second-section-div1">
-    <img src="{% static 'courses\img\Image 2.jpg' %}" alt="" />
+    <img src="{% static 'courses\img\image1.png' %}" alt="" />
   </div>
 
   <div class="second-section-div2">
-    <div>
+    <div style="text-align: center;">
       <h2>{{course.title}}</h2>
-      <p style="text-align: justify;">{{course.description}}</p>
+      <p style="text-align: justify; padding-right: 3rem;">{{course.description}}</p>
       <!-- <h3>Instructor: <b>{{course.instructor}}</b></h3> -->
       <div class="flex-row-1">
         <a href="#Right-course"><button class="btn-33">Enroll Now</button></a>

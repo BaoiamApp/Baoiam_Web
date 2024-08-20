@@ -178,6 +178,7 @@ header .navbar-nav {
 #courseDropdown,
 .nav-link {
   cursor: pointer;
+  text-decoration: none;
   text-wrap: nowrap;
 }
 

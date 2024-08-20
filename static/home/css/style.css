@@ -593,7 +593,7 @@ header img {
   /* height: fit-content; */
 
   align-items: center;
-  gap: 20px;
+  gap: 4rem;
 }
 
 .icons i {
@@ -908,13 +908,14 @@ header img {
 }
 
 .section-3 .user-image {
-  border: 5px solid transparent;
-  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  /* border: 5px solid transparent;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); */
 
   border-radius: 2rem;
 
   width: 32em;
   position: relative;
+  bottom: 4rem;
 }
 
 .user-image-smaller {
