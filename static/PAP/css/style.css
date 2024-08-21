@@ -22,10 +22,10 @@
 }
 
 .first-half {
-  display: flex;
+  /* display: flex; */
   padding: 3rem;
-  margin-top: 3rem;
-  justify-content: space-evenly;
+  margin-top: 2rem;
+  /* justify-content: space-evenly; */
   margin-bottom: 1rem;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .first-half .text-div h1 span {
-  background: -webkit-linear-gradient(45deg, #fa2424, #fb8721);
+  background: -webkit-linear-gradient(0deg, #fa2424, #fb8721);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   border-bottom: 2px solid red;
@@ -78,7 +78,7 @@
 }
 
 .first-half img {
-  width: 25vw;
+  width: 100%;
   /* width: 40vw; */
   /* border-radius: 30px; */
   margin-left: 2rem;
@@ -147,7 +147,8 @@
 
 .second-half .each-image h2,
 p {
-  margin: 0;
+  width:40vw;
+  font-size:1rem;
   /* font-size: 1.5rem; */
 }
 
@@ -173,7 +174,7 @@ p {
 }
 
 .second .text-div {
-  text-align: center;
+  text-align: left;
   width: 90vw;
   margin: auto;
   padding-top: 1rem;
@@ -181,11 +182,12 @@ p {
 }
 
 .second .text-div h2 {
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: #031864;
   /* font-weight: bold; */
   font-weight: 700;
+  margin-left:3rem;
 }
 
 .second .text-div h2 span {
@@ -196,14 +198,15 @@ p {
 }
 
 .second .text-div p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: grey;
-  margin: 2rem auto 3rem;
+  margin: 2rem auto;
+  width: 80vw;
 }
 
 .second .features {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 30%);
   /* display: flex; */
   justify-content: center;
 }
@@ -231,7 +234,7 @@ p {
 }
 
 .second ul p {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   margin-left: 0.5rem;
   color: #031864;
   font-weight: bold;
@@ -266,11 +269,13 @@ p {
 
 .third .text-div p,
 .slider1 .textp {
-  font-size: 1.1rem;
+  /* font-size: 1.1rem; */
   color: gray;
   margin-bottom: 2rem;
+  text-align: justify;
+  margin: 1rem 3rem;
+  width: 85vw;
   text-align: center;
-  margin: 3rem auto 4rem;
 }
 
 .third .program {
@@ -283,19 +288,20 @@ p {
 .third .program-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 .third .program-text div {
   /* background-color: #fad9b4; */
-  text-align: center;
+  text-align: left;
   color: gray;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   border-radius: 20px;
   /* margin: 1rem; */
   margin-bottom: 1rem;
+  margin-top:2rem;
   width: 40vw;
 }
 
@@ -305,17 +311,17 @@ p {
   outline: none;
   border-radius: 20px;
   font-size: 1.3rem;
-  padding: 1rem;
+  padding: 0.6rem;
   width: 20vw;
   cursor: pointer;
   color: white;
 }
 .unique {
-  margin-top: 3rem;
-  font-size: 1.1rem;
+  margin-top: 0rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #031864;
-  text-align: center;
+  text-align: left;
 }
 
 .third #thumbnail {
@@ -516,8 +522,10 @@ footer .contact-us p div i {
   .second-half h2,
   .second .text-div h2,
   .third .text-div h2 {
-    font-size: 50px;
-    padding-top: 6rem;
+    font-size: 1.5rem;
+    padding-top: 4rem;
+    width: 80vw;
+    margin-left: 2rem;
   }
   .first-half .text-div p {
     margin-top: 1rem;
@@ -529,14 +537,18 @@ footer .contact-us p div i {
   }
 }
 
-@media (max-width: 1000px) {
+@media( max-width: 1000px) {
+ 
   .first-half .text-div p,
   .second-half p,
   .second .text-div p,
   .third .text-div p,
   .first-half li {
     /* font-size: 1.3rem; */
+    width:80vw;
+    margin: 2.5rem 3rem;
   }
+  
 
   .second-half .text-div,
   .second .text-div,
@@ -546,10 +558,13 @@ footer .contact-us p div i {
   .third .program img {
     width: 40vw;
   }
+  
   #ht {
     width: 130vw;
   }
 }
+
+
 @media (max-width: 800px) {
   .first-half {
     flex-direction: column;
@@ -611,9 +626,16 @@ footer .contact-us p div i {
   .third .text-div {
     max-width: 50rem;
   }
+  .third .text-div h2 {
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    width:95vw;
+    
+  }
   .third .text-div p {
-    font-size: 1.3rem;
-    padding: 0 3rem;
+    font-size: 1rem;
+    margin-left: 2rem;
+    width:80vw;
   }
   .third .program {
     flex-direction: column;
@@ -623,12 +645,17 @@ footer .contact-us p div i {
   }
   .third .program-text p {
     font-size: 1.2rem;
+    margin-left: 3rem;
+    width: 80vw;
   }
   .third .program-text div {
     width: 85vw;
   }
   .third .program-text button {
-    width: 30vw;
+    width: 27vw;
+    margin-left: 10rem;
+    padding: 0.6rem;
+    margin-top: 2rem;
   }
   .third .program img {
     display: block;
@@ -637,12 +664,15 @@ footer .contact-us p div i {
     margin-top: 5rem;
   }
   .second .features {
-    margin-left: 3rem;
+    margin-left: 0rem;
     margin-right: 3rem;
   }
   .second .text-div p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
+    width: 80vw;
+    margin-left: 4rem;
+    margin-top: 2rem;
   }
   .slider1 .content h2 {
     margin-top: 2rem;
@@ -677,10 +707,15 @@ footer .contact-us p div i {
     width: 40rem;
   }
   .second .text-div p {
-    font-size: 1.8rem;
+    font-size: 1rem;
+    width:80vw;
+    margin-left: 3rem;
+    margin-top: 2rem;
   }
   .second .features {
-    margin-left: 0;
+    margin-left: 0.1rem;
+    display: grid;
+    grid-template-columns: 100%;
   }
 
   .third .program-text {
@@ -688,43 +723,57 @@ footer .contact-us p div i {
     grid-template-columns: 1fr;
     /* margin-left: 4rem; */
   }
-  #ht {
-    width: 44rem;
+   #ht {
+    width: 25rem;
   }
 
   .third .text-div {
-    width: 40rem;
-  }
+    width: 4rem;
+  } 
   .third .text-div h2 {
-    font-size: 3rem;
+    padding: 1rem;
+    width: 85vw;
+    font-size: 1.2rem;
   }
+  }
+/* 
+@media (max-width:400px){
+  .second .text-div p{
+    margin-left:0rem;
+    width:80vw;
+  }
+} */
+
+
   .third .text-div p {
-    margin-top: 3rem;
-    font-size: 1.8rem;
+    margin-top: 1rem;
+    font-size: 1rem;
     font-weight: 700;
-    padding: 0;
+    padding: 1rem;
   }
   .third .program img {
-    width: 120vw;
+    width: 40vw;
+    height:38vw;
   }
 
   .program .program-text p {
-    width: 45rem;
-    margin-left: 8rem;
+    width: 40vw;
+    margin-left: 4rem;
     /* width: 40rem; */
-    font-size: 1.8rem;
+    font-size: 1.6vw;
+    padding-right:2rem;
   }
   .program .program-text button {
-    margin-left: 21rem;
-    width: 20rem;
-    font-size: 1.8rem;
+    margin-left: 4rem;
+    width: 16rem;
+    font-size: 1rem;
   }
   .features {
     flex-direction: column;
   }
   .features ul {
     margin-bottom: 0;
-    margin-left: 3rem;
+    margin-left: 0rem;
   }
 
   .second ul img {
@@ -734,12 +783,12 @@ footer .contact-us p div i {
   .slider1 .content h1,.slider1 .content h2 {
     margin-top: 2rem;
   }
-}
+
 
 @media (max-width: 400px) {
   .third .program img {
-    width: 160vw;
-    padding-top:5rem;
+    width: 80vw;
+    padding-top:0rem;
   }
 }
 
@@ -758,4 +807,18 @@ footer .contact-us p div i {
 .slider1 .content p {
   color: #031864;
   text-align: center;
+}
+
+@media (min-width:769px) and (max-width:1200px){
+  .slider1 .content p {
+    width:20vw;
+    font-size:1.5vw;
+  }
+}
+@media (min-width:1200px){
+  .slider1 .content p{
+    width: 20vw;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+  }
 }
