@@ -6,8 +6,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
     expose:
       - "8000"  
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+
   nginx:
     image: nginx:latest
     ports:
@@ -23,5 +28,5 @@ services:
     image: certbot/certbot
     volumes:
       - ./ssl:/etc/letsencrypt 
-      - ./certbot/conf:/etc/letsencrypt/config 
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+      - ./certbot/conf:/etc/letsencrypt/config  
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew && nginx -s reload; sleep 12h & wait $${!}; done;'"
