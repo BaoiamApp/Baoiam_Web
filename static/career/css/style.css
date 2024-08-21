@@ -193,7 +193,7 @@ body {
   position: relative;
   width: 320px;
   height: 320px;
-  background: #ffffffd3;
+  background: #fff;
   padding: 30px;
   border-radius: 50%;
   box-shadow: 0 0 22px #3336;
@@ -254,6 +254,12 @@ body {
   }
 }
 
+.profile-card:hover .img img{
+  aspect-ratio: 1.1;
+}
+.profile-card .img img{ 
+  aspect-ratio: 1;
+}
 .profile-card .img {
   position: relative;
   width: 100%;
