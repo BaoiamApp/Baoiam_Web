@@ -130,22 +130,38 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 680px) {
-  .popup-form {
-    left: 20%;
+@media (max-width: 768px){
+  .popup-form-content{
+    margin-top: 12%;
+        width: 25rem;
+  }
+
+  .popup-form input, .popup-form option, .popup-form select{
+    height: 32px;
   }
 }
 
 @media screen and (max-width: 520px) {
   .popup-form {
-    left: 10%;
-    width: 250px;
+    width: 100%;
+  }
+
+  .popup-form-content{
+    width: 22rem;
+    margin-top: 22%;
   }
 
   .popup-form input,
   .popup-form option,
   .popup-form select {
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px){
+  .popup-form-content{
+    width: 18rem;
+    margin-top: 30%;
   }
 }
 
@@ -1487,6 +1503,14 @@ footer p {
 
   .swiper-courses .splide__slide{
     width: 100%;
+  }
+}
+
+@media (max-width: 320px){
+  .swiper-courses{
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+        margin-inline: 0rem;
+        row-gap: 0rem;
   }
 }
 
