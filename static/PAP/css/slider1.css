@@ -158,7 +158,9 @@ input[type="radio"] {
     font-size: 1.3rem;
   }
   .main-card .cards .card {
-    margin: 20px 0 10px 0;
+    /* margin: 20px 0 10px 0; */
+    margin-inline: auto;
+    margin-bottom: 1rem;
     width: calc(100% / 2 - 10px);
   }
   .slider1 .container {
