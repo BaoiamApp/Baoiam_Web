@@ -2,9 +2,8 @@
 
 
 <!-- <link rel="stylesheet" href="{% static 'courses\css\style3.css' %}"> -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 
-  <script>
+  <!-- <script>
     const swiperEl = document.querySelector('swiper-container')
     Object.assign(swiperEl, {
       slidesPerView: 1,
@@ -28,9 +27,9 @@
       },
     });
     swiperEl.initialize();
-    </script>
+    </script> -->
   
-  <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
+  <!-- <form class="popup-form" id="popup-form" method="post" action="{% url 'course:course_contact' %}">
     {% csrf_token %}
     <div class="popup-form-content">
       <div class="close" id="popup-close">&times;</div>
@@ -48,7 +47,7 @@
       </select>
       <button type="submit" class="popup-submit">Submit</button>
     </div>
-  </form>
+  </form> -->
   <div class="containerr">
     {% for course in courses %} 
 
@@ -357,16 +356,71 @@
 </section>
 
 <!-- Right Course -->
+<form class="popup-form" id="popup-form" method="post" action="/subscription/create_purchase_record/">
+  {% csrf_token %}
+  <div class="popup-form-content">
+    <div class="close" id="popup-close">&times;</div>
+    <lable for="name" id="name">Name</lable>
+    <input id="name" type="text" name="name_" />
+    <lable for="email" id="email">Email</lable>
+    <input id="email" type="email" name="email_"/>
+    <lable for="mobile" id="mobile">Mobile</lable>
+    <input id="mobile" type="text" name="mobile_"/>
+    <label for="professionSelect" id="professionLabel">Profession</label>
+    <select id="professionSelect" name="profession_">
+      <option value="student">Student</option>
+      <option value="teacher">Passed out</option>
+      <option value="engineer">Working Professional</option>
+    </select>
+    <button type="submit" class="popup-submit">Submit</button>
+  </div>
+</form>
 <section class="Right-course" id="Right-course">
   <h2>
     Join With Us
     Find<br />the <span class="underline">Right Course</span>
   </h2>
-  <div class="slider_wrapper">
-    <div class="splide">
-      <div class="splide__track">
-        <div class="splide__list">
-          {% for plan in subscription_course_plans %}
+    
+          <!-- {% for plan in subscription_course_plans %}
+          <div class="splide__slide">
+            <div class="content-box">
+              <div class="content">
+                <div class="slide-name">{{ plan.subscription_plan.name }}</div>
+                <div class="temp">{{ plan.subscription_plan.description }}</div>
+                <div class="price">{{ plan.subscription_plan.price }}/Full course</div>
+                <ul class="course-content">
+                  <li>{{ plan.course_features|linebreaks }}</li>
+                </ul>
+                <div>
+                  
+                  <form class="popup-form" id="popup-form" method="post" action="/subscription/create_purchase_record/">
+                    {% csrf_token %}
+                    <div class="popup-form-content">
+                      <div class="close" id="popup-close">&times;</div>
+                      <lable for="name" id="name">Name</lable>
+                      <input id="name" type="text" name="name_" />
+                      <lable for="email" id="email">Email</lable>
+                      <input id="email" type="email" name="email_"/>
+                      <lable for="mobile" id="mobile">Mobile</lable>
+                      <input id="mobile" type="text" name="mobile_"/>
+                      <label for="professionSelect" id="professionLabel">Profession</label>
+                      <select id="professionSelect" name="profession_">
+                        <option value="student">Student</option>
+                        <option value="teacher">Passed out</option>
+                        <option value="engineer">Working Professional</option>
+                      </select>
+                      <button type="submit" onclick="openForm()" class="popup-submit">Submit</button>
+                    </div>
+                  </form>
+                  <button type="submit" class="enroll-btn">Enroll Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %} -->
+
+          <div class="swiper-courses">
+    {% for plan in subscription_course_plans %}
           <div class="splide__slide">
             <div class="content-box">
               <div class="content">
@@ -399,23 +453,22 @@
                                         </ul>
                                     {% endif %} -->
                 <div>
-                  <form id="enroll-form" class="courses-enroll-btn" method="post"
+                  <!-- <form id="enroll-form" class="courses-enroll-btn" method="post"
                     action="/subscription/create_purchase_record/">
                     {% csrf_token %}
                     <input type="text" name="course_id" id="course_id" value="{{ plan.course.id }}">
                     <input type="text" name="plan_id" id="plan_id" value="{{ plan.subscription_plan.id }}">
                     <input type="text" name="username" id="username" value="{{ request.user.username }}">
-                    <button type="submit" class="enroll-btn">Enroll Now</button>
-                  </form>
+                  </form> -->
+                  
+                  <button type="submit" onclick="openForm()" class="enroll-btn">Enroll Now</button>
                 </div>
               </div>
             </div>
           </div>
           {% endfor %}
-        </div>
-      </div>
-    </div>
   </div>
+        
 </section>
 
 <div class="emi-container">
@@ -687,7 +740,12 @@
 </div>
 </div>
 </div>
+
+
+
+
 <script>
+
   function openForm() {
     document.getElementById("popup-form").style.display = "block";
   }
@@ -701,13 +759,36 @@
   function closeForm() {
     document.getElementById("popup-form").style.display = "none";
   }
+
+    const swiperCourse = document.getElementById('#swiper-courses')
+    Object.assign(swiperCourse, {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
+    });
+    swiperCourse.initialize();
+
+  
 </script>
+
 <!-- </body> -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
 <script src="{% static 'courses\js\index.js' %}"></script>
-
-
 
 <!-- </html> -->
 {% endblock content %}
