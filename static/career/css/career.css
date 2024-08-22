@@ -82,6 +82,7 @@ svg {
 
 .upskill-content h1 {
   font-size: clamp(2rem, calc(-0.6892rem + 5vw), 50px);
+  text-align: left;
 }
 
 .upskill-content p {
@@ -162,7 +163,8 @@ svg {
 
 .smallheading {
   color: rgb(4, 4, 91);
-  font-size: 3rem;
+  text-align: center;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -1354,7 +1356,7 @@ article p {
   }
   .team-container p {
     font-size: 14px;
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   .upskill-img {

@@ -83,11 +83,15 @@
         </form>
         <div class="social">
           <p class="socialP">Or Sign up with social platforms</p>
-          <div class="icons">
+          <!-- <div class="icons">
               <div class="circle"><a href="{% url 'social:begin' 'github' %}"><i class="fab fa-github fa-2x"></i></a></div>
               <div class="circle"><a href="{% url 'social:begin' 'google-oauth2' %}"> <i class="fab fa-google"></i></a></div>
 
-          </div>
+          </div> -->
+          <a class="circle" href="{% url 'social:begin' 'google-oauth2' %}">
+            <!-- <i class="fa-brands fa-google"></i -->
+              <img width="100%" src="{% static 'authentication/img/google.png' %}" alt="">
+          </a>
         </div>
       </div>
     </div>
