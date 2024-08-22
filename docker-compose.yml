@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  web:
+    image: avyakta000/ancient-baoiam-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "80:8000"
+      - "443:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+
+
+
+
+# version: '3.8'
+
+# services:
+#   web:
+#     image: avyakta000/ancient-baoiam-app:latest
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     command: python manage.py runserver 0.0.0.0:8000
+#     expose:
+#       - "8000"  
+#     environment:
+#       - PYTHONDONTWRITEBYTECODE=1
+#       - PYTHONUNBUFFERED=1
+
+#   nginx:
+#     image: nginx:latest
+#     ports:
+#       - "80:80"
+#       - "443:443"
+#     volumes:
+#       - ./nginx.conf:/etc/nginx/nginx.conf
+#       - ./ssl:/etc/letsencrypt  
+#     depends_on:
+#       - web
+
+#   certbot:
+#     image: certbot/certbot
+#     volumes:
+#       - ./ssl:/etc/letsencrypt 
+#       - ./certbot/conf:/etc/letsencrypt/config  
+#     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew && nginx -s reload; sleep 12h & wait $${!}; done;'"

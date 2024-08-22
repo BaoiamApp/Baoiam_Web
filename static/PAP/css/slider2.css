@@ -31,7 +31,7 @@
     .blog-slider {
       min-height: 500px;
       height: auto;
-      margin: 180px auto;
+      margin: 180px auto 100px;
     }
   }
   @media screen and (max-height: 500px) and (min-width: 992px) {
@@ -171,6 +171,10 @@
     .blog-slider__text {
       font-size: 1.2rem;
     }
+    .blog-slider__img{
+      width: 400px;
+      height: 350px;
+    }
   }
   @media screen and (max-width: 576px) {
     .blog-slider__content {
@@ -198,6 +202,7 @@
     color: #4e4a67;
     margin-bottom: 30px;
     line-height: 1.5em;
+    width: 26rem;
   }
   .blog-slider__button {
     display: inline-flex;
@@ -215,7 +220,7 @@
   @media screen and (max-width: 576px) {
     .blog-slider__button {
       width: 100%;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
     .slider2 {
       margin-top: 5rem;
@@ -223,18 +228,21 @@
       padding-bottom: 0;
     }
     .blog-slider__code {
-      font-size: 1.5rem;
+      font-size: 1rem;
+    }
+    .blog-slider{
+      height: 44rem;
     }
     .blog-slider__title {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
     .blog-slider__text {
       margin: 2rem 1rem;
       text-align: justify;
-      font-size: 1.6rem;
+      font-size: 0.8rem;
     }
     .blog-slider__button {
-      width: 15rem;
+      width: 12rem;
     }
   }
   .blog-slider .swiper-container-horizontal > .swiper-pagination-bullets,
