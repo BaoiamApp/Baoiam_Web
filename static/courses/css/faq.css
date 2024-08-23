@@ -183,14 +183,14 @@ ul {
   }
 }
 
-@media screen and (max-width: 1090px) {
+/* @media screen and (max-width: 1090px) {
   .splide__slide {
     width: 46% !important;
     margin: 20px !important;
     display: flex;
     justify-content: center;
   }
-}
+} */
 
 @media screen and (max-width: 800px) {
   .container-main {

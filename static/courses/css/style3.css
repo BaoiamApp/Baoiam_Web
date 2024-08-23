@@ -43,12 +43,15 @@
 
 .popup-form {
   position: fixed;
-  height: 450px;
-  width: 400px;
-  left: 40%;
-  top: 23%;
-  z-index: 3;
-  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.425);
   padding: 5px;
   box-shadow: 2px 2px 4px 2px gray;
   display: none;
@@ -56,16 +59,22 @@
 
 .popup-form-content {
   display: flex;
+  margin-top: 13%;
+  width: 30rem;
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
   flex-direction: column;
-  margin-left: 30px;
   gap: 6px;
+  background-color: white;
+  position: relative;
 }
 
 .popup-form .close {
-  font-size: 40px;
-  display: flex;
-  margin-right: 30px;
-  justify-content: flex-end;
+  font-size: 3rem;
+  position: absolute;
+  right: 6%;
+  top: 4%;
 }
 
 .popup-form .close:hover {
@@ -75,9 +84,10 @@
 .popup-form input,
 .popup-form option,
 .popup-form select {
-  width: 80%;
+  width: 100%;
   height: 40px;
-  border-radius: 10px;
+  padding-inline: 1rem;
+  border-radius: 5px;
   outline: none;
   border: 1px solid gray;
 }
@@ -120,22 +130,38 @@
   object-fit: cover;
 }
 
-@media screen and (max-width: 680px) {
-  .popup-form {
-    left: 20%;
+@media (max-width: 768px){
+  .popup-form-content{
+    margin-top: 12%;
+        width: 25rem;
+  }
+
+  .popup-form input, .popup-form option, .popup-form select{
+    height: 32px;
   }
 }
 
 @media screen and (max-width: 520px) {
   .popup-form {
-    left: 10%;
-    width: 250px;
+    width: 100%;
+  }
+
+  .popup-form-content{
+    width: 22rem;
+    margin-top: 22%;
   }
 
   .popup-form input,
   .popup-form option,
   .popup-form select {
-    width: 90%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px){
+  .popup-form-content{
+    width: 18rem;
+    margin-top: 30%;
   }
 }
 
@@ -1163,11 +1189,20 @@ footer p {
   /* width: 1400px !important; */
 }
 
-.splide__slide {
-  width: 31% !important;
-  margin: 20px !important;
-  display: flex;
-  justify-content: center;
+.swiper-courses {
+  display: grid;
+    margin-inline: 2rem;
+    row-gap: 3rem;
+    grid-template-columns: repeat(3, minmax(474px, 1fr));
+}
+
+.swiper-courses .splide__slide {
+  width: 100%;
+    /* margin: 20px !important; */
+    /* padding-right: 3rem; */
+    /* margin-inline: 18px; */
+    display: flex;
+    /* justify-content: center;*/
 }
 
 .content-box {
@@ -1214,9 +1249,10 @@ footer p {
   font-size: 1.2rem;
   font-weight: 800;
   padding: 1em 1.5em;
-  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
-  -webkit-text-fill-color: #ffffff;
-  border: none;
+  left: 30%;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
   border-radius: 25px;
   transition: 0.75s;
   cursor: pointer;
@@ -1438,6 +1474,15 @@ footer p {
   .buy_course_container {
     flex-direction: column;
   }
+
+  .swiper-courses{
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+    margin-inline: 1rem;
+  }
+
+  .swiper-courses .splide__slide{
+    width: 83%;
+  }
 }
 
 @media (max-width: 540px) {
@@ -1449,6 +1494,23 @@ footer p {
   .btn-3 {
     font-size: 20px;
     padding: 20px;
+  }
+
+  .swiper-courses{
+    grid-template-columns: repeat(1, minmax(400px, 1fr));
+    margin-inline: 1rem;
+  }
+
+  .swiper-courses .splide__slide{
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px){
+  .swiper-courses{
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+        margin-inline: 0rem;
+        row-gap: 0rem;
   }
 }
 
@@ -1756,23 +1818,19 @@ footer p {
   }
 }
 
-.popup-form-content input,
-.popup-form-content select {
-  box-shadow: 1.2px 1.5px 0.7px #777 !important;
-}
-
 .popup-submit {
   font-size: 1rem;
-  font-weight: 600;
-  width: 100px;
-  height: 40px;
-  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
-  -webkit-text-fill-color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  transition: 3s;
-  align-items: center;
-  text-align: center;
+    font-weight: 600;
+    width: 10rem;
+    height: 40px;
+    background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+    -webkit-text-fill-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    margin-inline: auto;
+    transition: 3s;
+    align-items: center;
+    text-align: center;
 }
 
 @media (min-width: 451px) and (max-width: 1140px) {
@@ -2086,7 +2144,7 @@ footer p {
   .Right-course h2 span {
     width: 100%;
     font-size: 26px;
-    padding-top: 0px;
+    padding-top: 5rem;
   }
 
   .splide__track--draggable {
@@ -2095,7 +2153,7 @@ footer p {
   }
 
   .course-content {
-    line-height: 2.5rem;
+    line-height: 2rem;
     margin-top: 0.5rem;
     margin-bottom: 0px;
   }
@@ -2122,6 +2180,7 @@ footer p {
 
   .content-box {
     width: 85%;
+    height: 45rem;
   }
 
   .emi_box h2 {
@@ -2155,7 +2214,7 @@ footer p {
 
   .buy_course_box {
     padding: 0.8rem 1.2rem;
-    height: 12vh !important;
+    height: 18vh !important;
   }
 
   .percentage,
