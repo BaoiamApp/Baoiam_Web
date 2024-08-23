@@ -874,7 +874,7 @@ header img {
 /* Enhance skill section */
 .section-3 {
   padding-inline: 4rem;
-  margin-bottom: 5rem !important;
+  /* margin-bottom: 5rem !important; */
 }
 
 .section-3 .horizon h2 {
@@ -916,7 +916,7 @@ header img {
 
   width: 32em;
   position: relative;
-  bottom: 4rem;
+  bottom: 10rem;
 }
 
 .user-image-smaller {
@@ -2651,7 +2651,12 @@ content:none;
 
 @media (max-width: 777px) and (min-width: 591px) {
   #baoiam-info.section-3.mb-5 .user-image {
-    width: 20em;
+    width: 25rem;
+    margin-bottom: -4rem;
+  }
+
+  #baoiam-info .d-block > div {
+    flex-direction: column;
   }
 
   .user_image {
@@ -2687,7 +2692,12 @@ content:none;
 
 @media (max-width: 590px) and (min-width: 200px) {
   #baoiam-info.section-3.mb-5 .user-image {
-    width: 15em;
+    width: 18rem;
+    margin-bottom: -5rem;
+  }
+
+  #baoiam-info .d-block > div {
+    flex-direction: column;
   }
 
   #baoiam-info .mr-lr-0 {
@@ -3272,9 +3282,9 @@ content:none;
     padding: 0px;
   }
 
-  #baoiam-info.section-3.mb-5 .user-image {
+  /* #baoiam-info.section-3.mb-5 .user-image {
     margin-top: -30px;
-  }
+  } */
   #baoiam-info.section-3.mb-5 .user_image {
     position: relative;
     left: 50%;
