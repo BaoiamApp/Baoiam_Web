@@ -26,6 +26,40 @@ html {
   align-items: flex-start;
   justify-content: space-between;
 }
+/* Add this CSS to your existing CSS file or within a <style> tag in the <head> */
+ .section {
+  /* Existing styles */
+  padding: 20px;
+  margin: 10px;
+  border-radius: 0px;
+  width: 90%; /* Makes the section take up the full width of its parent */
+  height: fit-content;
+  box-sizing: border-box; 
+  margin-left: 70px;  
+
+  /* Shadow effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  padding-bottom: 100px;
+  /* padding-top: -20px; */
+}
+
+/* Optional: Customize the shadow effect for different sections */
+#profile-section {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slightly larger shadow */
+ 
+}
+
+#course-section {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Medium shadow */
+}
+
+#certificate-section {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Basic shadow */
+}
+
+#livestream-section {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Basic shadow */
+}
 .just {
   width: 320px;
   height: 100%;
@@ -146,21 +180,388 @@ html {
 .form-section {
   position: fixed;
   width: 70%;
-  height: fit-content;
-  overflow: hidden;
+  height: 80%; /* Set a fixed height to allow scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
   background-color: whitesmoke;
   border-radius: 12px;
   box-shadow: 0px 0px 22px rgb(0, 0, 0);
   display: none;
-  top: 50%;
-  left: 50%;
+  top: 53%;
+  left: 55%;
   transform: translate(-50%, -50%);
   background-color: white;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  padding: 20px; /* Added padding inside the form section */
+  margin-left: 15px; /* Added margin to the left */
+  margin-right: 15px; /* Added margin to the right */
+}
+input[type="file"].profile_photo {
+  background-color: #fff; /* White background for the file input */
+  border: 1px solid #ccc; /* Border around the file input */
+  border-radius: 5px; /* Rounded corners for the file input */
+  padding: 10px; /* Padding inside the file input */
+  width: 40%; /* File input takes the full width of the box */
+  box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  font-size: 14px; /* Font size for the file input text */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 10px; /* Space above the file input */
+  box-shadow: 1px 2px 2px rgba(128, 128, 128, 0.466);
 }
 
+/* Style for the scrollbar */
+.form-section::-webkit-scrollbar {
+  width: 12px;
+}
+
+.form-section::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+.form-section::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 6px;
+}
+
+.form-section::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.close-details {
+  text-align: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.profile_photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  margin-top: 10px;
+}
+
+.form-content {
+  margin: 20px 0;
+  padding-left: 15px; /* Added padding to the left of the form content */
+  padding-right: 15px; /* Added padding to the right of the form content */
+}
+
+.form-element {
+  margin-bottom: 20px; /* Increased margin between form elements */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-element input,
+.form-element select,
+.form-element textarea {
+  padding: 12px; /* Increased padding inside inputs, selects, and textareas */
+  font-size: 16px; /* Slightly increased font size */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 1px 2px 2px rgba(128, 128, 128, 0.466);
+  margin-top: 5px; /* Added margin on top of each form element */
+}
+
+.first-middle-last {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Added gap between the first, middle, and last name fields */
+}
+
+.first-middle-last .form-element {
+  width: 30%;
+}
+
+.college-details .form-element,
+.personal-details .form-element {
+  width: 100%;
+  margin-bottom: 20px; /* Added margin between elements in these sections */
+}
+
+.close-details-section {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.close-details {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  box-shadow: 4px 8px 8px gray;
+  font-size: 40px;
+  color: orangered;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: ease 0.5s;
+}
+
+.close-details:hover {
+  transform: scale(1.01);
+  box-shadow: 8px 12px 12px gray;
+}
+
+#submit-btn-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.submit-btn {
+  width: 170px;
+  height: 50px;
+  margin: 20px 0;
+  background: -webkit-linear-gradient(45deg, #ff0000, #ff8000);
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 4px 4px gray;
+  transition: ease 0.5s;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  background-color: #218838;
+}
+
+.submit-btn:active {
+  transform: scale(0.93);
+}
+
+@media (max-width: 768px) {
+  .first-middle-last {
+    flex-direction: column;
+    gap: 0; /* Remove gap in mobile view */
+  }
+
+  .first-middle-last .form-element {
+    width: 100%;
+  }
+
+  button.submit-btn {
+    font-size: 14px;
+  }
+}
+hr {
+  width: 105%;       
+  margin-left: 28%; 
+  height: 2px;       
+  background-color: black; 
+  border:none;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+
+/* 
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/poppins/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("../fonts/poppins/Poppins-SemiBold.ttf");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins-Regular", sans-serif;
+  color: #333;
+  background-color: #f4f7f6;
+  font-size: 14px;
+}
+
+
+.form-section {
+  padding: 50px;
+  background-color: rgba(255, 255, 255, 0.9); 
+  background-image: url(''); 
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0; 
+  background-image: url('your-image-path.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.close-details {
+  font-size: 24px;
+  color: #555;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.form-content {
+  width: 100%;
+}
+
+.profile-image-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image-section input[type="file"] {
+  display: block;
+  margin: 10px auto;
+  font-size: 14px;
+}
+
+.first-middle-last,
+.college-details,
+.personal-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-element {
+  margin-bottom: 20px; 
+}
+label {
+  display: block;
+  margin-bottom: 8px; 
+  font-weight: bold;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.first-middle-last, .college-details, .personal-details {
+  margin-bottom: 30px; 
+}
+
+.form-element label {
+  font-family: "Poppins-SemiBold", sans-serif;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.form-element input,
+.form-element select,
+.form-element textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  font-family: "Poppins-Regular", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin-top: 5px;
+}
+
+.form-element input:focus,
+.form-element select:focus,
+.form-element textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+button {
+  border: none;
+  width: 180px;
+  height: 50px;
+  margin: auto;
+  margin-top: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #333;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #555;
+}
+button.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-family: "Poppins-SemiBold", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+button.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 20px;
+  }
+
+  .first-middle-last,
+  .college-details,
+  .personal-details {
+    flex-direction: column;
+  }
+
+  .form-element {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+} */
+
+
+
+/* 
 .form {
   width: 100%;
   display: flex;
@@ -197,15 +598,12 @@ html {
 }
 .form-content {
   width: 100%;
-  /* display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  flex-direction: row; */
+ 
 }
 .form .profile-image-section {
   display: flex;
   justify-content: flex-start;
-  /* margin-left: 10px; */
+
 }
 .form input,
 .form select {
@@ -234,9 +632,7 @@ option:hover {
   width: 90%;
   height: 80px;
   margin-top: 20px;
-  /* margin-left: 10px; */
-  /* display: flex;
-  justify-content: center; */
+ 
   border-radius: 8px;
   padding: 7px;
   border: none;
@@ -258,7 +654,7 @@ option:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* gap: 10px; */
+ 
 }
 
 .form .socialmedia-section {
@@ -266,8 +662,7 @@ option:hover {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* margin-left: 20px; */
-  /* gap: 10px; */
+
 }
 .socialmedia-section input {
   width: 350px;
@@ -290,7 +685,7 @@ option:hover {
 }
 
 #submit-btn-section {
-  /* width: 100%; */
+ 
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -315,7 +710,9 @@ option:hover {
 }
 .submit-btn:active {
   transform: scale(0.93);
-}
+} */
+
+
 
 @keyframes bounce {
   0%,
