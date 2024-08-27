@@ -370,18 +370,20 @@
 }
 
 .second-section-div1 img {
-  /* width: 59%; */
-  object-fit: contain;
-  height: 100%;
-  text-align: center;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /* width: 100%; */
+  width: 80%;
+    object-fit: cover;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .second-section-div2 {
-  width: 60%;
+  width: 50%;
+  padding: 1rem;
 }
 
 .second-section-div2 h2 {
@@ -394,7 +396,12 @@
   font-weight: 700;
   color: rgb(1, 1, 68);
 }
-
+.second-section-div2 p{
+  /* height: 380px; */
+  overflow: hidden;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .btn-33 {
   font-size: 16px;
   font-weight: 700;
@@ -470,7 +477,9 @@
   }
 
   .second-section-div1 img {
-    width: 40%;
+    /* width: 40%; */
+    width: 100%;
+
   }
 
   .second-section-container {
@@ -498,6 +507,9 @@
 }
 
 @media (max-width: 768px) {
+  .content-box{
+    height: 56rem;
+  }
   .topsection1-container {
     flex-direction: column;
     padding: 30px;
@@ -555,6 +567,10 @@
   .flex-row-1 {
     display: flex;
     flex-direction: column !important;
+  }
+  .second-section-div2{
+    width: 80%;
+    padding-bottom: 2rem;
   }
 }
 
@@ -630,7 +646,7 @@
   }
 
   .three h3 {
-    font-size: 30px !important;
+    font-size: 24px !important;
     /* padding-top: 6rem; */
   }
 
@@ -787,6 +803,11 @@
   .section-three .fa-solid {
     font-size: 1.5rem;
   }
+  #why-web-dev-heading-1 {
+    font-size: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* section two */
@@ -818,7 +839,10 @@
 
 .why-web-dev {
   width: 50%;
+  padding: 1rem;
+
 }
+
 
 .image {
   width: 50%;
@@ -1618,6 +1642,9 @@ footer p {
 }
 
 @media screen and (max-width: 1140px) {
+  .content-box{
+    height: 55rem;
+  }
   .topsection1-container,
   .why-web-dev-box {
     display: flex;
@@ -1757,7 +1784,7 @@ footer p {
   }
 
   .why-web-dev-box .why-web-dev {
-    width: 80%;
+    /* width: 80%; */
   }
 
   .why-web-dev-box .why-web-dev h5 {
@@ -1978,7 +2005,13 @@ footer p {
   .second-section-div2 div p {
     text-align: center;
     font-size: 11px;
+    
   }
+  .second-section-div2 {
+    width: 90%;
+    padding: 1rem;
+
+}
 
   .second-section-div2 div h1 {
     text-align: center;
@@ -2003,6 +2036,7 @@ footer p {
   .second-section-container {
     margin-top: 10px;
     gap: 5px;
+
   }
 
   .why-web-dev-box {
@@ -2330,6 +2364,9 @@ footer p {
     font-size: 39px !important;
     padding-top: 50px;
   }
+  .content-box{
+    height: 41rem;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 440px) {
@@ -2365,7 +2402,9 @@ footer p {
     font-size: 25px !important;
     padding-bottom: 1rem !important;
   }
-
+.content-box{
+  height: 46rem;
+}
   .ac-main h2 span {
     font-size: 25px !important;
   }
