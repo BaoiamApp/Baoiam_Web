@@ -609,12 +609,12 @@
         /*display: flex !important; */
         display: none;
         gap: 10px;
-        /* grid-template-columns: repeat(2, minmax(310px, 1fr)); */
+        grid-template-columns: repeat(3, minmax(310px, 1fr));
         position: absolute;
         top: 3.2rem;
-        flex-direction: row-reverse;
-        width: 42rem;
-        left: -13rem;
+       /* flex-direction: row-reverse; */
+        width: 62rem;
+        left: -23rem;
         background-color: white;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         padding: 1rem;
@@ -672,6 +672,8 @@
           left: -16.5rem;
           top: 2rem;
           height: 20rem;
+          width: 45rem;
+          grid-template-columns: repeat(2, minmax(310px, 1fr));
           overflow-y: auto;
           scroll-behavior: smooth;
         }
@@ -679,7 +681,7 @@
 
       @media (max-width: 425px) {
         #course-items {
-          flex-direction: column;
+          grid-template-columns: repeat(1, minmax(264px, 1fr));
           left: -6.5rem;
           width: 20rem;
           height: 20rem;
@@ -690,6 +692,10 @@
 
       #navbar {
         border-bottom: 1px solid #b9b9b9;
+      }
+
+      .dropdown-item{
+        width: 19rem;
       }
     </style>
 

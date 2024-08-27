@@ -55,7 +55,12 @@
       <div class="image"
       style="width: 100%; height: 100%;margin: 3rem 0 0;"
       >
-        <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" style="width: 100%; height: 100%; background-position: contain;" />
+
+        {% if course.brochure %}
+          <a href="{% url 'course:download_file' file_id=course.id %}" class="">
+            <img src="{{ course.banner.url }}" alt="{{ course.title }} Image" style="width: 100%; height: 100%; background-position: contain;" />
+          </a>
+        {% endif %}
       </div>
       {% endif %} 
 
@@ -307,13 +312,13 @@
   <div class="curriculum">
     {% for curr in carriculum %}
     <div class="curriculum-item">
-      <h2 class="curriculum-item-header">
+      <h2 class="curriculum-item-header" id="currHeader">
         {{curr.carriculum_title|safe}}
         <span class="material-symbols-outlined">
           expand_more
         </span>
       </h2>
-      <div class="curriculum-item-body">
+      <div class="curriculum-item-body show" id="currDrop">
         <div class="curriculum-item-body-content">
           {{curr.carriculum_desc|safe}}
         </div>
